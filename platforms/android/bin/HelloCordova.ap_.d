@@ -1,0 +1,25 @@
+/Users/petterkun/hello/NextflowApp/platforms/android/bin/HelloCordova.ap_ \
+ : /Users/petterkun/hello/NextflowApp/platforms/android/res/drawable/icon.png \
+/Users/petterkun/hello/NextflowApp/platforms/android/res/drawable-hdpi/icon.png \
+/Users/petterkun/hello/NextflowApp/platforms/android/res/drawable-ldpi/icon.png \
+/Users/petterkun/hello/NextflowApp/platforms/android/res/drawable-mdpi/icon.png \
+/Users/petterkun/hello/NextflowApp/platforms/android/res/drawable-xhdpi/icon.png \
+/Users/petterkun/hello/NextflowApp/platforms/android/res/values/strings.xml \
+/Users/petterkun/hello/NextflowApp/platforms/android/res/xml/config.xml \
+/Users/petterkun/hello/NextflowApp/platforms/android/bin/res/drawable/icon.png \
+/Users/petterkun/hello/NextflowApp/platforms/android/bin/res/drawable-hdpi/icon.png \
+/Users/petterkun/hello/NextflowApp/platforms/android/bin/res/drawable-ldpi/icon.png \
+/Users/petterkun/hello/NextflowApp/platforms/android/bin/res/drawable-mdpi/icon.png \
+/Users/petterkun/hello/NextflowApp/platforms/android/bin/res/drawable-xhdpi/icon.png \
+/Users/petterkun/hello/NextflowApp/platforms/android/assets/www \
+/Users/petterkun/hello/NextflowApp/platforms/android/assets/www/config.xml \
+/Users/petterkun/hello/NextflowApp/platforms/android/assets/www/cordova.js \
+/Users/petterkun/hello/NextflowApp/platforms/android/assets/www/cordova_plugins.js \
+/Users/petterkun/hello/NextflowApp/platforms/android/assets/www/css \
+/Users/petterkun/hello/NextflowApp/platforms/android/assets/www/img \
+/Users/petterkun/hello/NextflowApp/platforms/android/assets/www/index.html \
+/Users/petterkun/hello/NextflowApp/platforms/android/assets/www/js \
+/Users/petterkun/hello/NextflowApp/platforms/android/assets/www/css/index.css \
+/Users/petterkun/hello/NextflowApp/platforms/android/assets/www/img/logo.png \
+/Users/petterkun/hello/NextflowApp/platforms/android/assets/www/js/index.js \
+/Users/petterkun/hello/NextflowApp/platforms/android/bin/AndroidManifest.xml \
