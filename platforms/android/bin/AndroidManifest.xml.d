@@ -1,2 +1,2 @@
-/Users/petterkun/hello/NextflowApp/platforms/android/bin/AndroidManifest.xml : \
-/Users/petterkun/hello/NextflowApp/platforms/android/AndroidManifest.xml \
+C:\Users\Raul\ADTEclipse\workspace\appTakaraHunter\platforms\android\bin\AndroidManifest.xml : \
+C:\Users\Raul\ADTEclipse\workspace\appTakaraHunter\platforms\android\AndroidManifest.xml \
