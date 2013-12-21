@@ -1,4 +1,5 @@
-.cordova
-merges
-platforms
-plugins
+.cordova/
+merges/
+platforms/
+plugins/
+*.DS_Store
