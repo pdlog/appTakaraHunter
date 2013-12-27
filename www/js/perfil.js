@@ -27,12 +27,12 @@ var app = {
 		wrapper.className = 'cssClass';
 			
 		// Leemos por ajax el archivos opcion1.html de la carpeta opciones
-		xhReq.open("GET", "opciones/index/opcion1.html", false);
+		xhReq.open("GET", "opciones/perfil/opcion1.html", false);
 		xhReq.send(null);
 		document.getElementById("contenidoCuerpo").innerHTML=xhReq.responseText;
 
 		// Leemos por ajax el archivos menu.html de la carpeta opciones
-		xhReq.open("GET", "opciones/index/menu.html", false);
+		xhReq.open("GET", "opciones/perfil/menu.html", false);
 		xhReq.send(null);
 		document.getElementById("contenidoMenu").innerHTML=xhReq.responseText;
 		
@@ -92,7 +92,7 @@ function menu(opcion){
 		addClass('li-menu-activo' , document.getElementById("ulMenu").getElementsByTagName("li")[opcion]);
 		
 		// Recogemos mediante ajax el contenido del html segœn la opci—n clickeada en el menu
-		xhReq.open("GET", "opciones/index/opcion"+opcion+".html", false);
+		xhReq.open("GET", "opciones/perfil/opcion"+opcion+".html", false);
 		xhReq.send(null);
 		document.getElementById("contenidoCuerpo").innerHTML=xhReq.responseText;
 		
