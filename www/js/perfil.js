@@ -6,8 +6,6 @@ cuerpo = document.getElementById("cuerpo"),
 menuprincipal = document.getElementById("menuprincipal"),
 wrapper = document.getElementById("wrapper");
 
-var xhReq = new XMLHttpRequest();
-
 // Constructor de la app.
 var app =
 {    
