@@ -8,7 +8,7 @@ wrapper = document.getElementById("wrapper");
 
 // Constructor de la app.
 var app =
-{    
+{
     initialize: function()
 	{
     	// Estado inicial mostrando capa cuerpo.
@@ -46,6 +46,31 @@ var app =
 	{
     	// Ejecutamos la función FastClick, que es la que nos elimina esos 300ms de espera al hacer click.
     	new FastClick(document.body);
+    	
+    	// Menu del login
+    	$("#loginForm").on("submit",function(e)
+    	{
+			//disable the button so we can't resubmit while we wait
+			$("#submitButton",this).attr("disabled","disabled");
+			var u = $("#username", this).val();
+			var p = $("#password", this).val();
+			if(u != '' && p!= '')
+			{
+				$.post("http://localhost:8000/login/?method=login&returnformat=json", {username:u,password:p}, function(res)
+				{
+					if(res == true)
+					{
+						$.mobile.changePage("perfil.html");
+					}
+					else
+					{
+						navigator.notification.alert("El inicio de sesión ha fallado.", function() {});
+					}
+					$("#submitButton").removeAttr("disabled");
+				},"json");
+			}
+			return false;
+		});
     }, 
 };
 
