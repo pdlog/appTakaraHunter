@@ -26,11 +26,11 @@ var app =
 		menuprincipal.className = 'page center';
 		wrapper.className = 'cssClass';
 			
-		// Leemos por ajax el archivos opcion1.html de la carpeta opciones/index.
-		$("#contenidoCuerpo").load("opciones/index/opcion1.html");
+		// Leemos por ajax el archivos opcion1.html de la carpeta opciones/perfil.
+		$("#contenidoCuerpo").load("opciones/perfil/opcion1.html");
 
-		// Leemos por ajax el archivos menu.html de la carpeta opciones/index.
-		$("#contenidoMenu").load("opciones/index/menu.html");
+		// Leemos por ajax el archivos menu.html de la carpeta opciones/perfil.
+		$("#contenidoMenu").load("opciones/perfil/menu.html");
 		
 		// Creamos los 2 scroll mediante el plugin iscroll, uno para el menú principal y otro para el cuerpo.
 		myScroll = new iScroll('wrapper', { hideScrollbar: true });
@@ -72,7 +72,7 @@ function menu(opcion)
 		$("#ulMenu li").eq(opcion).addClass("li-menu-activo");
 		
 		// Recogemos mediante ajax el contenido del html según la opción clickeada en el menú.
-		$("#contenidoCuerpo").load("opciones/index/opcion"+opcion+".html");
+		$("#contenidoCuerpo").load("opciones/perfil/opcion"+opcion+".html");
 		
 		// Refrescamos el elemento iscroll segœn el contenido ya añadido mediante ajax, y hacemos que se desplace al top.
 		myScroll.refresh();
