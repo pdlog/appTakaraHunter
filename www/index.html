@@ -1,34 +1,211 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>TH | Bienvenido</title>
-    </head>
-    <body>
-		<div id="menuprincipal">
-			<div id="wrapperMenu">
-				<div class="scroller">
-					<div id="contenidoMenu"></div>
+<html lang="es">>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/jquery_mobile.css"/>
+		<title>TH | Bienvenido</title>
+	</head>
+	<body>
+		<!------------------------------------------------------------ PÁGINA BIENVENIDA -------------------------------------------------->
+		<div data-role="page" id="page1" data-theme="a">
+			<!----------------------------------------------------------- MENÚ DE LA BIENVENIDA --------------------------------------------->
+			<div data-role="panel" id="panel1" data-position="left" data-display="reveal" data-theme="b">
+				<div class="panel-content">
+					<a href="#page2" data-role="button" data-icon="lock" data-theme="a">Iniciar sesión</a>
+					<a href="" data-role="button" data-icon="delete" data-rel="close" data-theme="a">Cerrar panel</a>
 				</div>
 			</div>
-		</div>
-    	<div id="cuerpo">
-	        <div id="header"><a href="javascript:menu('menu');"><div class="btn">MENU</div></a><img class="logo" src="img/takara_logo.png" /></div>
-					<div id="wrapper">
-						<div class="scroller">
-							<div id="contenidoCuerpo"></div>
-						</div>
-					</div>
-					<!--<div id="pie"></div>-->
+			<!----------------------------------------------------------- HEADER DE LA BIENVENIDA ------------------------------------------>
+			<div data-role="header" data-position="fixed">
+				<a href="#panel1" data-role="button" data-icon="home">Menú</a>
+				<h1>Takara Hunter | Página de Inicio</h1>
 			</div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/fastclick.js"></script>
-        <script type="text/javascript" src="js/iscroll.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+			<!--------------------------------------------------------- CONTENIDO DE LA BIENVENIDA ------------------------------------------>
+			<div data-role="content">
+				<!--<ul id="lista-busquedas" data-role='listview' data-autodividers='true' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas'></ul>-->
+			</div>
+			<!----------------------------------------------------------- FOOTER DE LA BIENVENIDA ------------------------------------------->
+			<div data-role="footer" data-position="fixed">
+				<h1><img src="img/favicon.png"> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!------------------------------------------------------------ INICIO SESIÓN ------------------------------------------------------>
+		<div data-role="page" id="page2" data-theme="a">
+			<!-------------------------------------------------------------- MENÚ DEL LOGIN ------------------------------------------------->
+			<div data-role="panel" id="panel2" data-position="left" data-display="reveal" data-theme="b">
+				<div class="panel-content">
+					<a href="#page1" data-role="button" data-icon="home" data-theme="a">Página de bienvenida</a>
+					<a href="" data-role="button" data-icon="delete" data-rel="close" data-theme="a">Cerrar panel</a>
+				</div>
+			</div>
+			<!-------------------------------------------------------------- HEADER DEL LOGIN ----------------------------------------------->
+			<div data-role="header" data-position="fixed">
+				<a href="#panel2" data-role="button" data-icon="home">Menú</a>
+				<h1>Takara Hunter | Iniciar sesión</h1>
+			</div>
+			<!-------------------------------------------------------------- CONTENIDO DEL LOGIN -------------------------------------------->
+			<div data-role="content">
+				<form id="formlogin" action="">
+					<div data-role="fieldcontain">
+						<label for="username">Nombre de usuario:</label><input type="text" name="username" id="username" placeholder="Pepito">       
+						<label for="password">Contraseña:</label><input type="password" name="password" id="password" placeholder="Contraseña">
+					</div>
+					<input type="submit" id="boton" value="Iniciar sesión">
+				</form>
+			</div>
+			<!---------------------------------------------------------------- FOOTER DEL LOGIN --------------------------------------------->
+			<div data-role="footer" data-position="fixed">
+				<h1><img src="img/favicon.png"> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!--------------------------------------------------------------- MENSAJES DE ERROR ----------------------------------------------->
+		<!----------------------------------------- COMENTAR ESTE CÓDIGO SI SE VAN A CARGAR CON AJAX -------------------------------------->
+		<div data-role="page" id="caja-no-username-no-password">
+			<div data-role="header">
+				<h1>Error</h1>
+			</div>
+			<div data-role="content">
+				<p>No has introducido ni un nombre de usuario ni una contraseña.</p>
+			</div>
+		</div>
+		<div data-role="page" id="caja-no-username">
+			<div data-role="header">
+				<h1>Error</h1>
+			</div>
+			<div data-role="content">
+				<p>No has introducido un nombre de usuario.</p>
+			</div>
+		</div>
+		<div data-role="page" id="caja-no-password">
+			<div data-role="header">
+				<h1>Error</h1>
+			</div>
+			<div data-role="content">
+				<p>No has introducido una contraseña.</p>
+			</div>
+		</div>
+		<div data-role="page" id="ajax-failed">
+			<div data-role="header">
+				<h1>Error</h1>
+			</div>
+			<div data-role="content">
+				<p>Ha habido un error conectando con el servidor, pruebe más tarde.</p>
+			</div>
+		</div>
+		<!---------------------------------------------------------------------- SCRIPTS ------------------------------------------------->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery_mobile.js"></script>
+		<script type="text/javascript" src="js/fastclick.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+			app.initialize();
+
+			/*$.ajax({
+				type: "GET",
+				url: "http://127.0.0.1:8000/api/busquedas/",
+				crossDomain: true,
+				dataType: 'jsonp',
+				success: function(respuesta)
+				{
+					lista_busquedas = ""
+					for (var i in respuesta)
+					{
+						lista_busquedas = lista_busquedas + "<li><a href='#'><h2>" + respuesta[i].titulo + "</h2><p>" + respuesta[i].descripcion + "</p</a></li>"
+					}
+					$("#lista-busquedas").html(lista_busquedas);
+					$("#lista-busquedas").listview("refresh");
+					console.log(respuesta);
+        	//console.log("jsonexito");
+				},
+				error: function(respuesta)
+				{
+					$("#lista-busquedas").html("<li>Se ha producido un error y no se han cargado búsquedas.</li>");
+					$("#lista-busquedas").listview("refresh");
+					//console.log(respuesta);
+          //console.log("jsonfail");
+				}
+			});*/
+
+			//---------------------------------------------------------------- LOGIN ---------------------------------------------------------------*/
+			$("#boton").click(function(e)
+			{
+				e.preventDefault();
+				//console.log("ola1");
+				var url="http://127.0.0.1:8000/api/";
+				var parametros = '';//{"p1":"valor1", "p2":"valor2"};
+				var username = $("#username").val();
+				var password = $("#password").val();
+				if(username != '' && password != '')
+				{
+					$("#boton").attr("disabled","disabled");
+					//console.log("ola2");
+					
+					
+				$.ajax({
+				 url:"http://127.0.0.1:8000/api/",
+				 //callback: ?,
+				 dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
+				 success:function(json){
+					 // do stuff with json (in this case an array)
+					 console.log('va');
+					 console.log(json);
+					 //alert("Success");
+				 },
+				 error:function(){
+					 //alert("Error");
+				 },
+				});	
+					
+					$.ajax({
+						type: "POST",
+						url: "http://127.0.0.1:8000/loginMovil/",
+						data:
+						{
+							'username': username,
+							'password': password
+						},
+						dataType: 'json',
+						
+					
+					error: function(xhr, status, error){
+	        			console.log('ErrorLogin');
+	        			var err = eval("(" + xhr.responseText + ")");
+  						console.log(err);
+  						console.log(error);
+  						console.log(status);
+		    		},
+
+						success: function(json){
+	        			console.log('GogoLogin');
+	        			console.log(json);
+		    		},
+						error: function(respuesta)
+						{
+							//$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
+							$.mobile.changePage("#ajax-failed", {role:"dialog"}); //<-- cargar sin ajax
+							console.log(respuesta);
+              console.log("jsonfail");
+						}
+					});
+					$("#boton").removeAttr("disabled");
+				}
+				else if(username == "" && password == "")
+				{
+					//$.mobile.changePage("dialog-boxes/error/no-username-no-password.html", {role:"dialog"}); //<-- cargar con ajax
+					$.mobile.changePage("#caja-no-username-no-password", {role:"dialog"}); //<-- cargar sin ajax
+				}
+				else if(username == "")
+				{
+					//$.mobile.changePage("dialog-boxes/error/no-username.html", {role:"dialog"}); //<-- cargar con ajax
+					$.mobile.changePage("#caja-no-username", {role:"dialog"}); //<-- cargar sin ajax
+				}
+				else if(password == "")
+				{
+					//$.mobile.changePage("dialog-boxes/error/no-password.html", {role:"dialog"}); //<-- cargar con ajax
+					$.mobile.changePage("#caja-no-password", {role:"dialog"}); //<-- cargar sin ajax
+				}
+				return false;
+			});
+		</script>
+	</body>
 </html>
