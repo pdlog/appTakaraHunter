@@ -21,6 +21,10 @@ function perfil()
 
 		$("#foto_perfil").html(foto);
 		$("#datos_personales_usuario").html(datos_personales);
-		$("#datos_personales_usuario").listview("refresh");
+		if(he_hecho_login_antes == true) // PARA KE EL PERFIL SE VEA BIEN MODO WARRO NIVEL DIOS
+		{
+			$("#datos_personales_usuario").listview("refresh");
+		}
+		he_hecho_login_antes = true;
 	});
 }
