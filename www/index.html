@@ -1,34 +1,167 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>TH | Bienvenido</title>
-    </head>
-    <body>
-		<div id="menuprincipal">
-			<div id="wrapperMenu">
-				<div class="scroller">
-					<div id="contenidoMenu"></div>
+<html lang='es'>
+	<head>
+		<meta charset='utf-8'>
+		<link rel='stylesheet' type='text/css' href='css/jquery_mobile.css'/>
+		<title>TH | Bienvenido</title>
+	</head>
+	<body>
+		<!------------------------------------------------------------ PÁGINA BIENVENIDA -------------------------------------------------->
+		<div id='page1' data-role='page' data-theme='a'>
+			<div id='panel1' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+				<div class='panel-content'>
+					<a href='#page2' data-role='button' data-icon='lock' data-theme='a'>Iniciar sesión</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
+					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
 			</div>
-		</div>
-    	<div id="cuerpo">
-	        <div id="header"><a href="javascript:menu('menu');"><div class="btn">MENU</div></a><img class="logo" src="img/takara_logo.png" /></div>
-					<div id="wrapper">
-						<div class="scroller">
-							<div id="contenidoCuerpo"></div>
-						</div>
-					</div>
-					<!--<div id="pie"></div>-->
+			<div id='header1' data-role='header' data-position='fixed'>
+				<a href='#panel1' data-role='button' data-icon='home'>Menú</a>
+				<h1>Takara Hunter | Página de Inicio</h1>
 			</div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/fastclick.js"></script>
-        <script type="text/javascript" src="js/iscroll.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+			<div id='content1' data-role='content'>
+				
+			</div>
+			<div id='footer1' data-role='footer' data-position='fixed'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!------------------------------------------------------------ INICIO SESIÓN ------------------------------------------------------>
+		<div id='page2' data-role='page' data-theme='a'>
+			<div id='panel2' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+				<div class='panel-content'>
+					<a href='#page1' data-role='button' data-icon='home' data-theme='a'>Página de bienvenida</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
+					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
+				</div>
+			</div>
+			<div id='header2' data-role='header' data-position='fixed'>
+				<a href='#panel2' data-role='button' data-icon='home'>Menú</a>
+				<h1>Takara Hunter | Iniciar sesión</h1>
+			</div>
+			<div id='content2' data-role='content'>
+				<form id='form-login' action=''>
+					<div data-role='fieldcontain'>
+						<label for='username-login'>Nombre de usuario:</label><input type='text' name='username-login' id='username-login' placeholder='Pepito'>       
+						<label for='password-login'>Contraseña:</label><input type='password' name='password-login' id='password-login' placeholder='Contraseña'>
+					</div>
+					<input type='submit' id='boton-login' value='Iniciar sesión'>
+				</form>
+			</div>
+			<div id='footer2' data-role='footer' data-position='fixed'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!------------------------------------------------------------ MI PERFIL ------------------------------------------------------>
+		<div id='page3' data-role='page' data-theme='a'>
+			<div id='panel3' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+				<div class='panel-content'>
+					<a id='boton-lista-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
+					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
+				</div>
+			</div>
+			<div id='header3' data-role='header' data-position='fixed'>
+				<a href='#panel3' data-role='button' data-icon='home'>Menú</a>
+				<h1>Takara Hunter | Mi perfil</h1>
+			</div>
+			<div id='content3' data-role='content'>
+				<p id='foto_perfil'></p>
+				<br>
+				<ul id='datos_personales_usuario' data-role="listview"></ul>
+			</div>
+			<div id='footer3' data-role='footer' data-position='fixed'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!------------------------------------------------------------ MIS BUSQUEDAS ------------------------------------------------------>
+		<div id='page4' data-role='page' data-theme='a'>
+			<div id='panel4' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+				<div class='panel-content'>
+					<a id='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
+					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
+					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
+				</div>
+			</div>
+			<div id='header4' data-role='header' data-position='fixed'>
+				<a href='#panel4' data-role='button' data-icon='home'>Menú</a>
+				<h1>Takara Hunter | Búsquedas</h1>
+			</div>
+			<div id='content4' data-role='content'>
+				<h1>Mis búsquedas</h1>
+				<ul id='mis-busquedas' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-split-icon='delete'></ul>
+				<h1>Búsquedas disponibles</h1>
+				<ul id='busquedas-disponibles' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-icon='check'></ul>
+			</div>
+			<div id='footer4' data-role='footer' data-position='fixed'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!-------------------------------------------------------------------- SOBRE LA APP ----------------------------------------------->
+		<div id='caja-sobre-app' data-role='page'>
+			<div data-role='header'>
+				<h1>Sobre la aplicación</h1>
+			</div>
+			<div data-role='content'>
+				<ul data-role="listview">
+					<li data-role='list-divider'>Autores</li>
+					<li>Arroyo Lubián Raúl - i02arlur@uco.es</li>
+					<li>Lacalle Garcíai Alfonso - 52lagaa@uco.es</li>
+					<li>López González Pedro Daniel - i02logop@uco.es</li>
+					<li>Rodríguez Pérez Jesús - i02roprj@uco.es</li>
+				</ul>
+			</div>
+			<div data-role='footer'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter</h1>
+			</div>
+		</div>
+		<!--------------------------------------------------------------- MENSAJES DE ERROR ----------------------------------------------->
+		<div id='caja-no-username-no-password' data-role='page'>
+			<div data-role='header'>
+				<h1>Error</h1>
+			</div>
+			<div data-role='content'>
+				<p>No has introducido ni un nombre de usuario ni una contraseña.</p>
+			</div>
+		</div>
+		<div id='caja-no-username' data-role='page'>
+			<div data-role='header'>
+				<h1>Error</h1>
+			</div>
+			<div data-role='content'>
+				<p>No has introducido un nombre de usuario.</p>
+			</div>
+		</div>
+		<div id='caja-no-password' data-role='page'>
+			<div data-role='header'>
+				<h1>Error</h1>
+			</div>
+			<div data-role='content'>
+				<p>No has introducido una contraseña.</p>
+			</div>
+		</div>
+		<div id='ajax-failed' data-role='page'>
+			<div data-role='header'>
+				<h1>Error</h1>
+			</div>
+			<div data-role='content'>
+				<p>Ha habido un error conectando con el servidor, pruebe más tarde.</p>
+			</div>
+		</div>
+		<!---------------------------------------------------------------------- SCRIPTS ------------------------------------------------->
+		<script type='text/javascript' src='js/jquery.js'></script>
+		<script type='text/javascript' src='js/jquery_mobile.js'></script>
+		<!--<script type='text/javascript' src='js/fastclick.js'></script>-->
+		<script type='text/javascript' src='js/index.js'></script>
+		<script type='text/javascript' src='js/sobre.js'></script>
+		<script type='text/javascript' src='js/login.js'></script>
+		<script type='text/javascript' src='js/perfil.js'></script>
+		<script type='text/javascript' src='js/busquedas.js'></script>
+		<script type='text/javascript' src='js/funciones_busquedas.js'></script>
+		<script type='text/javascript'>
+			//app.initialize();
+		</script>
+	</body>
 </html>
