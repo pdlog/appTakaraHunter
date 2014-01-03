@@ -63,3 +63,8 @@ function unirme_busqueda(opcion)
 {
 	alert("Voy a unirme a la búsqueda " + opcion);
 }
+function buscar_tesoro()
+{
+	//document.getElementById('audio').play(); no logro que funcione
+	$.mobile.changePage("#page6");
+}
