@@ -6,7 +6,7 @@ function perfil()
 		var foto = "";
 		var datos_personales = "";
 
-		foto = foto + "<center><img src='img/foto_user.jpg' height='175' weight='75'></center>";
+		foto = foto + "<center><img src='img/foto_user.jpg' style='width:50%; max-width:175px; height:75%; max-height:275px;'></center>";
 
 		datos_personales = datos_personales + "<li data-role='list-divider'>Información de cuenta</li>";
 		datos_personales = datos_personales + "<li><strong>Nombre de usuario:</strong> pepeito5464</li>";
@@ -26,5 +26,32 @@ function perfil()
 			$("#datos_personales_usuario").listview("refresh");
 		}
 		he_hecho_login_antes = true;
+		
+		var x = 5;//document.getElementById('user_px').value;
+		var y = 5; //document.getElementById('user_py').value;
+		var center = new google.maps.LatLng(x, y);
+		var mapOptions =
+		{
+			center:center,
+			zoom:4,
+			mapTypeId:google.maps.MapTypeId.ROADMAP,
+			draggable:true,
+			panControl:false,
+			zoomControl:true,
+			mapTypeControl:false,
+			scaleControl:false,
+			streetViewControl:false,
+			overviewMapControl:false,
+		};
+		var map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
+  			
+  		var marker = new google.maps.Marker(
+  		{
+    		map:map,
+    		draggable:false,
+    		animation: google.maps.Animation.DROP,
+    		position: center,
+    		icon: 'img/moneda_takara.png' 
+  		});
 	});
 }
