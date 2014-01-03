@@ -6,7 +6,7 @@ function perfil()
 		var foto = "";
 		var datos_personales = "";
 
-		foto = foto + "<center><img src='img/foto_user.jpg' height='175' weight='75'></center>";
+		foto = foto + "<center><img src='img/foto_user.jpg' style='width:50%; max-width:175px; height:75%; max-height:275px;'></center>";
 
 		datos_personales = datos_personales + "<li data-role='list-divider'>Información de cuenta</li>";
 		datos_personales = datos_personales + "<li><strong>Nombre de usuario:</strong> pepeito5464</li>";
