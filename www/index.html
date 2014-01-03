@@ -11,6 +11,7 @@
 			<div id='panel1' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a href='#page2' data-role='button' data-icon='lock' data-theme='a'>Iniciar sesión</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
 			</div>
@@ -30,6 +31,7 @@
 			<div id='panel2' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a href='#page1' data-role='button' data-icon='home' data-theme='a'>Página de bienvenida</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
 			</div>
@@ -56,6 +58,7 @@
 				<div class='panel-content'>
 					<a id='boton-lista-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
 					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
 			</div>
@@ -78,6 +81,7 @@
 				<div class='panel-content'>
 					<a id='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
 					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
 			</div>
@@ -93,6 +97,24 @@
 			</div>
 			<div id='footer4' data-role='footer' data-position='fixed'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!-------------------------------------------------------------------- SOBRE LA APP ----------------------------------------------->
+		<div id='caja-sobre-app' data-role='page'>
+			<div data-role='header'>
+				<h1>Sobre la aplicación</h1>
+			</div>
+			<div data-role='content'>
+				<ul data-role="listview">
+					<li data-role='list-divider'>Autores</li>
+					<li>Arroyo Lubián Raúl - i02arlur@uco.es</li>
+					<li>Lacalle Garcíai Alfonso - 52lagaa@uco.es</li>
+					<li>López González Pedro Daniel - i02logop@uco.es</li>
+					<li>Rodríguez Pérez Jesús - i02roprj@uco.es</li>
+				</ul>
+			</div>
+			<div data-role='footer'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter</h1>
 			</div>
 		</div>
 		<!--------------------------------------------------------------- MENSAJES DE ERROR ----------------------------------------------->
@@ -133,6 +155,7 @@
 		<script type='text/javascript' src='js/jquery_mobile.js'></script>
 		<!--<script type='text/javascript' src='js/fastclick.js'></script>-->
 		<script type='text/javascript' src='js/index.js'></script>
+		<script type='text/javascript' src='js/sobre.js'></script>
 		<script type='text/javascript' src='js/login.js'></script>
 		<script type='text/javascript' src='js/perfil.js'></script>
 		<script type='text/javascript' src='js/busquedas.js'></script>

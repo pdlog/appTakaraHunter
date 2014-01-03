@@ -23,4 +23,5 @@ $(document).ready(function()
 	login();
 	busquedas();
 	perfil();
+	sobre();
 });
