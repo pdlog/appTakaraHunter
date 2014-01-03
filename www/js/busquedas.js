@@ -1,7 +1,7 @@
 //---------------------------------------------------------------- BUSQUEDAS ---------------------------------------------------------------*/
 function busquedas()
 {
-	$("#boton-lista-busquedas").click(function(e)
+	$(".boton-lista-busquedas").click(function(e)
 	{
 		var mis_busquedas = "";
 		var busquedas_disponibles = "";

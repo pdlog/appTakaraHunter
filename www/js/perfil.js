@@ -1,7 +1,7 @@
 //---------------------------------------------------------------- PERFIL ---------------------------------------------------------------*/
 function perfil()
 {
-	$("#boton-perfil").click(function(e)
+	$(".boton-perfil").click(function(e)
 	{
 		var foto = "";
 		var datos_personales = "";
