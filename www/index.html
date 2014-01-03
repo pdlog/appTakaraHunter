@@ -86,31 +86,17 @@
 				<h1>Takara Hunter | Búsquedas</h1>
 			</div>
 			<div id='content4' data-role='content'>
-				<div class='ui-grid-a'>
-					<div class='ui-block-a'>
-						<h1>Mis búsquedas</h1>
-					</div>
-					<div class='ui-block-b'>
-						<h1>Búsquedas disponibles</h1>
-					</div>
-				</div>
-				<br>
-				<div class='ui-grid-a'>
-					<div class='ui-block-a'>
-						<ul id='mis-busquedas' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-split-icon='delete'></ul>
-					</div>
-					<div class='ui-block-b'>
-						<ul id='busquedas-disponibles' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-icon='check'></ul>
-					</div>
-				</div>
+				<h1>Mis búsquedas</h1>
+				<ul id='mis-busquedas' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-split-icon='delete'></ul>
+				<h1>Búsquedas disponibles</h1>
+				<ul id='busquedas-disponibles' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-icon='check'></ul>
 			</div>
 			<div id='footer4' data-role='footer' data-position='fixed'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
 			</div>
 		</div>
 		<!--------------------------------------------------------------- MENSAJES DE ERROR ----------------------------------------------->
-		<!----------------------------------------- COMENTAR ESTE CÓDIGO SI SE VAN A CARGAR CON AJAX -------------------------------------->
-		<div data-role='page' id='caja-no-username-no-password'>
+		<div id='caja-no-username-no-password' data-role='page'>
 			<div data-role='header'>
 				<h1>Error</h1>
 			</div>
@@ -118,7 +104,7 @@
 				<p>No has introducido ni un nombre de usuario ni una contraseña.</p>
 			</div>
 		</div>
-		<div data-role='page' id='caja-no-username'>
+		<div id='caja-no-username' data-role='page'>
 			<div data-role='header'>
 				<h1>Error</h1>
 			</div>
@@ -126,7 +112,7 @@
 				<p>No has introducido un nombre de usuario.</p>
 			</div>
 		</div>
-		<div data-role='page' id='caja-no-password'>
+		<div id='caja-no-password' data-role='page'>
 			<div data-role='header'>
 				<h1>Error</h1>
 			</div>
@@ -134,7 +120,7 @@
 				<p>No has introducido una contraseña.</p>
 			</div>
 		</div>
-		<div data-role='page' id='ajax-failed'>
+		<div id='ajax-failed' data-role='page'>
 			<div data-role='header'>
 				<h1>Error</h1>
 			</div>
@@ -146,11 +132,11 @@
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/jquery_mobile.js'></script>
 		<!--<script type='text/javascript' src='js/fastclick.js'></script>-->
+		<script type='text/javascript' src='js/index.js'></script>
 		<script type='text/javascript' src='js/login.js'></script>
 		<script type='text/javascript' src='js/perfil.js'></script>
 		<script type='text/javascript' src='js/busquedas.js'></script>
 		<script type='text/javascript' src='js/funciones_busquedas.js'></script>
-		<script type='text/javascript' src='js/index.js'></script>
 		<script type='text/javascript'>
 			//app.initialize();
 		</script>

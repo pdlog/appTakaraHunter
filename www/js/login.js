@@ -36,7 +36,7 @@ function login()
 			var foto = "";
 			var datos_personales = "";
 
-			foto = foto + "<center><img src='img/foto_user.jpg' height='350' weight='150'></center>";
+			foto = foto + "<center><img src='img/foto_user.jpg' height='175' weight='75'></center>";
 
 			datos_personales = datos_personales + "<li data-role='list-divider'>Información de cuenta</li>";
 			datos_personales = datos_personales + "<li><strong>Nombre de usuario:</strong> pepeito5464</li>";
@@ -56,7 +56,7 @@ function login()
 			{
 				$("#datos_personales_usuario").listview("refresh");
 			}
-			he_hecho_login_antes = true
+			he_hecho_login_antes = true;
 			$.mobile.changePage("#page3");
 			$("#boton-login").removeAttr("disabled");
 		}

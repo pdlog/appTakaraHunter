@@ -6,7 +6,7 @@ function perfil()
 		var foto = "";
 		var datos_personales = "";
 
-		foto = foto + "<center><img src='img/foto_user.jpg' height='350' weight='150'></center>";
+		foto = foto + "<center><img src='img/foto_user.jpg' height='175' weight='75'></center>";
 
 		datos_personales = datos_personales + "<li data-role='list-divider'>Información de cuenta</li>";
 		datos_personales = datos_personales + "<li><strong>Nombre de usuario:</strong> pepeito5464</li>";
@@ -23,5 +23,4 @@ function perfil()
 		$("#datos_personales_usuario").html(datos_personales);
 		$("#datos_personales_usuario").listview("refresh");
 	});
-});
 }

@@ -3,14 +3,14 @@ function busquedas()
 {
 	$("#boton-lista-busquedas").click(function(e)
 	{
-		var mis_busquedas = ""
-		var busquedas_disponibles = ""
+		var mis_busquedas = "";
+		var busquedas_disponibles = "";
 
-		mis_busquedas = mis_busquedas + "<li><a href='javascript:empezar_busqueda(1);'><h2>Búsqueda 1</h2><p>Descripción de la búsqueda 1</p></a><a href='javascript:dejar_busqueda(1);'>Abandonar búsqueda</a></li>";
-		mis_busquedas = mis_busquedas + "<li><a href='javascript:empezar_busqueda(2);'><h2>Búsqueda 2</h2><p>Descripción de la búsqueda 2</p></a><a href='javascript:dejar_busqueda(2);'>Abandonar búsqueda</a></li>";
+		mis_busquedas = mis_busquedas + "<li id='busqueda1'><a href='javascript:empezar_busqueda(1);'><h2>Búsqueda 1</h2><p>Descripción de la búsqueda 1</p></a><a href='javascript:dejar_busqueda(1);'>Abandonar búsqueda</a></li>";
+		mis_busquedas = mis_busquedas + "<li id='busqueda2'><a href='javascript:empezar_busqueda(2);'><h2>Búsqueda 2</h2><p>Descripción de la búsqueda 2</p></a><a href='javascript:dejar_busqueda(2);'>Abandonar búsqueda</a></li>";
 
-		busquedas_disponibles = busquedas_disponibles + "<li><a href='javascript:unirme_busqueda(1);'><h2>Búsqueda 3</h2><p>Descripción de la búsqueda 3</p></a></li>";
-		busquedas_disponibles = busquedas_disponibles + "<li><a href='javascript:unirme_busqueda(2);'><h2>Búsqueda 4</h2><p>Descripción de la búsqueda 4</p></a></li>";
+		busquedas_disponibles = busquedas_disponibles + "<li id='busqueda3'><a href='javascript:unirme_busqueda(3);'><h2>Búsqueda 3</h2><p>Descripción de la búsqueda 3</p></a></li>";
+		busquedas_disponibles = busquedas_disponibles + "<li id='busqueda4'><a href='javascript:unirme_busqueda(4);'><h2>Búsqueda 4</h2><p>Descripción de la búsqueda 4</p></a></li>";
 	
 		$("#mis-busquedas").html(mis_busquedas);
 		$("#busquedas-disponibles").html(busquedas_disponibles);
