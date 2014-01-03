@@ -27,7 +27,7 @@ function perfil()
 		}
 		he_hecho_login_antes = true;
 		
-		var x = 5;//document.getElementById('user_px').value;
+		/*var x = 5;//document.getElementById('user_px').value;
 		var y = 5; //document.getElementById('user_py').value;
 		var center = new google.maps.LatLng(x, y);
 		var mapOptions =
@@ -52,6 +52,6 @@ function perfil()
     		animation: google.maps.Animation.DROP,
     		position: center,
     		icon: 'img/moneda_takara.png' 
-  		});
+  		});*/
 	});
 }
