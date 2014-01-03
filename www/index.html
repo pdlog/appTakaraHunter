@@ -3,6 +3,8 @@
 	<head>
 		<meta charset='utf-8'>
 		<link rel='stylesheet' type='text/css' href='css/jquery_mobile.css'/>
+		<link rel='stylesheet' type='text/css' href='css/jquery.mobile.icons.min.css'/>
+		<link rel='stylesheet' type='text/css' href='css/takara_hunter_1.min.css'/>
 		<title>TH | Bienvenido</title>
 	</head>
 	<body>
@@ -100,6 +102,29 @@
 				<ul id='busquedas-disponibles' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-icon='check'></ul>
 			</div>
 			<div id='footer4' data-role='footer' data-position='fixed'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!------------------------------------------------------------ REALIZACIÓN BÚSQUEDA ------------------------------------------------------>
+		<div id='page5' data-role='page' data-theme='a'>
+			<div id='panel5' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+				<div class='panel-content'>
+					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
+					<a class='boton-lista-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
+					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
+				</div>
+			</div>
+			<div id='header5' data-role='header' data-position='fixed'>
+				<a href='#panel5' data-role='button' data-icon='home'>Menú</a>
+				<h1>Takara Hunter | Buscando tesoro...</h1>
+			</div>
+			<div id='content5' data-role='content'>
+				<ul id='datos_busqueda_realizando' data-role="listview"></ul>
+			</div>
+			<div id='footer5' data-role='footer' data-position='fixed'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
 			</div>
 		</div>

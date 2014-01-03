@@ -14,8 +14,13 @@ function busquedas()
 	
 		$("#mis-busquedas").html(mis_busquedas);
 		$("#busquedas-disponibles").html(busquedas_disponibles);
-		$("#mis-busquedas").listview("refresh");
-		$("#busquedas-disponibles").listview("refresh");
+		
+		if (he_entrado_en_lista_busquedas_antes == true)
+		{
+			$("#mis-busquedas").listview("refresh");
+			$("#busquedas-disponibles").listview("refresh");
+		}
+		he_entrado_en_lista_busquedas_antes = true;
 
 		/*$.ajax({
 			type: "GET",
