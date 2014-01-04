@@ -66,8 +66,11 @@ function dejar_busqueda(opcion)
 		data:{'user': id_global},
 		success: function(respuesta)
 		{
-			console.log(respuesta);
-			cargarBusquedas();
+			if (respuesta.status == "unjoined")
+			{
+				cargarBusquedas();
+			}
+			//console.log(respuesta);
 		},
 		error: function(respuesta)
 		{
@@ -88,8 +91,15 @@ function unirme_busqueda(opcion)
 		data:{'user': id_global},
 		success: function(respuesta)
 		{
-			console.log(respuesta);
-			cargarBusquedas();
+			//console.log(respuesta);
+			if (respuesta.status == "joined")
+			{
+				cargarBusquedas();
+			}
+			else if (respuesta.status == "busqueda sin tesoros")
+			{
+				$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
+			}
 		},
 		error: function(respuesta)
 		{
