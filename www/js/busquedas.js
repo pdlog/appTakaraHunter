@@ -1,7 +1,7 @@
 //---------------------------------------------------------------- BUSQUEDAS ---------------------------------------------------------------*/
-function busquedas()
+$(document).ready(function()
 {
-	$(".boton-lista-busquedas").click(function(e)
+	$(document).on("pageinit", "#page4", function()
 	{
 		var mis_busquedas = "";
 		var busquedas_disponibles = "";
@@ -15,12 +15,8 @@ function busquedas()
 		$("#mis-busquedas").html(mis_busquedas);
 		$("#busquedas-disponibles").html(busquedas_disponibles);
 		
-		if (he_entrado_en_lista_busquedas_antes == true)
-		{
-			$("#mis-busquedas").listview("refresh");
-			$("#busquedas-disponibles").listview("refresh");
-		}
-		he_entrado_en_lista_busquedas_antes = true;
+		$("#mis-busquedas").listview("refresh");
+		$("#busquedas-disponibles").listview("refresh");
 
 		/*$.ajax({
 			type: "GET",
@@ -48,4 +44,4 @@ function busquedas()
 			}
 		});*/
 	});
-}
+});

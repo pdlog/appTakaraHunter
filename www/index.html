@@ -6,12 +6,6 @@
 		<link rel='stylesheet' type='text/css' href='css/jquery.mobile.icons.min.css'/>
 		<link rel='stylesheet' type='text/css' href='css/takara_hunter_1.min.css'/>
 		<title>TH | Bienvenido</title>
-		<style>
-			#mapa img
-			{
-				max-width: none;
-			}
-		</style>
 	</head>
 	<body>
 		<!------------------------------------------------------------ PÁGINA BIENVENIDA -------------------------------------------------->
@@ -66,7 +60,7 @@
 		<div id='page3' data-role='page' data-theme='a'>
 			<div id='panel3' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
-					<a class='boton-lista-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
 					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
@@ -90,7 +84,7 @@
 		<div id='page4' data-role='page' data-theme='a'>
 			<div id='panel4' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
-					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
+					<a href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
 					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
@@ -115,8 +109,8 @@
 		<div id='page5' data-role='page' data-theme='a'>
 			<div id='panel5' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
-					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
-					<a class='boton-lista-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
+					<a href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
 					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
@@ -140,8 +134,8 @@
 		<div id='page6' data-role='page' data-theme='a'>
 			<div id='panel6' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
-					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
-					<a class='boton-lista-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
+					<a href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
 					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
@@ -158,90 +152,6 @@
 			</div>
 			<div id='footer6' data-role='footer' data-position='fixed'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
-			</div>
-		</div>
-		<!-------------------------------------------------------------------- SOBRE LA APP ----------------------------------------------->
-		<div id='caja-sobre-app' data-role='page'>
-			<div data-role='header'>
-				<h1>Sobre la aplicación</h1>
-			</div>
-			<div data-role='content'>
-				<ul data-role="listview">
-					<li data-role='list-divider'>Autores</li>
-					<li>Arroyo Lubián Raúl - i02arlur@uco.es</li>
-					<li>Lacalle Garcíai Alfonso - 52lagaa@uco.es</li>
-					<li>López González Pedro Daniel - i02logop@uco.es</li>
-					<li>Rodríguez Pérez Jesús - i02roprj@uco.es</li>
-				</ul>
-			</div>
-			<div data-role='footer'>
-				<h1><img src='img/favicon.png'> 2014 Takara Hunter</h1>
-			</div>
-		</div>
-		<!-------------------------------------------------------------------- HELP ----------------------------------------------->
-		<div id='caja-help' data-role='page'>
-			<div data-role='header'>
-				<h1>Ayuda</h1>
-			</div>
-			<div data-role='content'>
-				<div data-role="collapsible-set">
-				  <div data-role="collapsible">
-				    <h3>Navegación</h3>
-				    <p>Para navegar por la aplicación puedes usar el menú de la izquierda.</p>
-				    <p>Algunas acciones, sin embargo, sólo aparecerán en la parte de en medio, como puede ser 'Buscar tesoro' o 'Unirte a búsqueda'.</p>
-				  </div>
-				  <div data-role="collapsible">
-				    <h3>Inicio de sesión</h3>
-				    <p>Para iniciar sesión en la aplicación, debes dirigirte al menú de inicio de sesión.</p>
-				    <p>Ahí encontrarás un formulario para introducir tu nombre de usuario y tu contraseña.</p>
-				  </div>
-				  <div data-role="collapsible">
-				    <h3>Mi perfil</h3>
-				    <p>En el menú de tu perfil tendrás acceso a tu foto, tus datos personales, los datos de la cuenta y tu localización actual.</p>
-				  </div>
-				  <div data-role="collapsible">
-				    <h3>Búsquedas</h3>
-				    <p>En el menú de las búsquedas encontrarás 2 listas de búsquedas.</p>
-				    <p>Una contiene las búsquedas a las que te has apuntado y puedes realizar en cualquier momento o abandonarlas.</p>
-				    <p>La otra contiene las búsquedas a las que no te has apuntado y puedes unirte en cualquier momento.</p>
-				  </div>
-				</div>
-			</div>
-			<div data-role='footer'>
-				<h1><img src='img/favicon.png'> 2014 Takara Hunter</h1>
-			</div>
-		</div>
-		<!--------------------------------------------------------------- MENSAJES DE ERROR ----------------------------------------------->
-		<div id='caja-no-username-no-password' data-role='page'>
-			<div data-role='header'>
-				<h1>Error</h1>
-			</div>
-			<div data-role='content'>
-				<p>No has introducido ni un nombre de usuario ni una contraseña.</p>
-			</div>
-		</div>
-		<div id='caja-no-username' data-role='page'>
-			<div data-role='header'>
-				<h1>Error</h1>
-			</div>
-			<div data-role='content'>
-				<p>No has introducido un nombre de usuario.</p>
-			</div>
-		</div>
-		<div id='caja-no-password' data-role='page'>
-			<div data-role='header'>
-				<h1>Error</h1>
-			</div>
-			<div data-role='content'>
-				<p>No has introducido una contraseña.</p>
-			</div>
-		</div>
-		<div id='ajax-failed' data-role='page'>
-			<div data-role='header'>
-				<h1>Error</h1>
-			</div>
-			<div data-role='content'>
-				<p>Ha habido un error conectando con el servidor, pruebe más tarde.</p>
 			</div>
 		</div>
 		<!---------------------------------------------------------------------- SCRIPTS ------------------------------------------------->
