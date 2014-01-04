@@ -1,0 +1,32 @@
+//--------------------------------------------------------- LOGOUT ---------------------------------------------------------*/
+$(document).ready(function()
+{
+	$(".boton-logout").click(function(e)
+	{
+		$.ajax({
+			async: true,
+			url: "http://127.0.0.1:8000/logoutMovil/",
+			type: "GET",
+			dataType: 'json',
+			success: function(respuesta)
+			{
+				$.mobile.changePage("#page1");
+				//var username_global = $("#username-global").val();
+				//console.log(username_global);
+				//$("#username-global").val("");
+				//var username_global = $("#username-global").val();
+				//console.log(username_global);
+				//console.log(respuesta.status);
+				//console.log("jsonexito");
+			},
+			
+			error: function(respuesta)
+			{
+				$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
+				//$.mobile.changePage("#caja-ajax-failed", {role:"dialog"}); //<-- cargar sin ajax
+				//console.log(respuesta);
+				//console.log("jsonfail");
+			}
+		});
+	});
+});

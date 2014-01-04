@@ -29,7 +29,8 @@ $(document).ready(function()
 					}
 					if (estado == "ok")
 					{
-						//username_global = respuesta.username; // <- DEBO GUARDAR EL USERNAME DE ALGUNA FORMA
+						$("#username-global").val(respuesta.user);
+						cargarPerfil();
 						$.mobile.changePage("#page3");
 					}
 					if (estado == "User is not active")
@@ -37,16 +38,16 @@ $(document).ready(function()
 						$.mobile.changePage("dialog-boxes/error/user-no-active.html", {role:"dialog"}); //<-- cargar con ajax
 						//$.mobile.changePage("#caja-user-no-active", {role:"dialog"}); //<-- cargar sin ajax
 					}
-					console.log(respuesta.status);
-					console.log("jsonexito");
+					//console.log(respuesta);
+					//console.log("jsonexito");
 				},
 				
 				error: function(respuesta)
 				{
 					$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
 					//$.mobile.changePage("#caja-ajax-failed", {role:"dialog"}); //<-- cargar sin ajax
-					console.log(respuesta);
-					console.log("jsonfail");
+					//console.log(respuesta);
+					//console.log("jsonfail");
 				}
 			});
 			

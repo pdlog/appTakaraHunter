@@ -22,6 +22,3 @@ var tesoro_posicion_x = 0;
 var tesoro_posicion_y = 0;
 var nombre_busqueda = "";
 var descripcion_busqueda = "";
-
-var username_global = "";
-var id_user_global = "";

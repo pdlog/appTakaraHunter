@@ -61,7 +61,7 @@
 			<div id='panel3' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
-					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
@@ -84,8 +84,8 @@
 		<div id='page4' data-role='page' data-theme='a'>
 			<div id='panel4' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
-					<a href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
-					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
+					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
@@ -109,9 +109,9 @@
 		<div id='page5' data-role='page' data-theme='a'>
 			<div id='panel5' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
-					<a href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
+					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
 					<a href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
-					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
@@ -134,9 +134,9 @@
 		<div id='page6' data-role='page' data-theme='a'>
 			<div id='panel6' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
-					<a href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
+					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
 					<a href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
-					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
@@ -154,6 +154,10 @@
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
 			</div>
 		</div>
+		<!-------------------------------------------------------- VARIABLE GLOBALES QUE WARRO ------------------------------------------->
+		<input id='username-global'>
+		<input id='ip-server'>
+		<input id='puerto'>
 		<!---------------------------------------------------------------------- SCRIPTS ------------------------------------------------->
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/jquery_mobile.js'></script>
@@ -162,6 +166,7 @@
 		<script type='text/javascript' src='js/sobre.js'></script>
 		<script type='text/javascript' src='js/help.js'></script>
 		<script type='text/javascript' src='js/login.js'></script>
+		<script type='text/javascript' src='js/logout.js'></script>
 		<script type='text/javascript' src='js/perfil.js'></script>
 		<script type='text/javascript' src='js/busquedas.js'></script>
 		<script type='text/javascript' src='js/funciones_busquedas.js'></script>
