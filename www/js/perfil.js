@@ -52,7 +52,6 @@ function cargarPerfil()
 			//console.log(respuesta.status);
 			//console.log("jsonexito");
 		},
-		
 		error: function(respuesta)
 		{
 			$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax

@@ -60,7 +60,7 @@
 		<div id='page3' data-role='page' data-theme='a'>
 			<div id='panel3' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
-					<a href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
 					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
@@ -110,7 +110,7 @@
 			<div id='panel5' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
-					<a href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
 					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
@@ -135,7 +135,7 @@
 			<div id='panel6' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
-					<a href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
 					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
@@ -155,9 +155,9 @@
 			</div>
 		</div>
 		<!-------------------------------------------------------- VARIABLE GLOBALES QUE WARRO ------------------------------------------->
-		<input id='username-global'>
-		<input id='ip-server'>
-		<input id='puerto'>
+		<input id='username-global' type='hidden'>
+		<input id='id-user-global' type='hidden'>
+		<input id='ip-server' type='hidden'>
 		<!---------------------------------------------------------------------- SCRIPTS ------------------------------------------------->
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/jquery_mobile.js'></script>

@@ -10,10 +10,11 @@ $(document).ready(function()
 			dataType: 'json',
 			success: function(respuesta)
 			{
+				$("#username-global").val("");
+				$("#id-user-global").val("");
 				$.mobile.changePage("#page1");
 				//var username_global = $("#username-global").val();
 				//console.log(username_global);
-				//$("#username-global").val("");
 				//var username_global = $("#username-global").val();
 				//console.log(username_global);
 				//console.log(respuesta.status);

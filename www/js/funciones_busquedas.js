@@ -56,12 +56,46 @@ function empezar_busqueda(opcion)
 //---------------------------------------------------------------- ABANDONAR_BUSQUEDA ---------------------------------------------------------------*/
 function dejar_busqueda(opcion)
 {
-	alert("Voy a dejar la búsqueda " + opcion);
+	var id_global = $("#id-user-global").val();
+	
+	$.ajax({
+		async: true,
+		url: "http://127.0.0.1:8000/api/busquedas/" + opcion + "/unjoin/",
+		type: "POST",
+		dataType: 'json',
+		data:{'user': id_global},
+		success: function(respuesta)
+		{
+			console.log(respuesta);
+			cargarBusquedas();
+		},
+		error: function(respuesta)
+		{
+			$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
+		}
+	});
 }
 //---------------------------------------------------------------- UNIRME_BUSQUEDA ---------------------------------------------------------------*/
 function unirme_busqueda(opcion)
 {
-	alert("Voy a unirme a la búsqueda " + opcion);
+	var id_global = $("#id-user-global").val();
+	
+	$.ajax({
+		async: true,
+		url: "http://127.0.0.1:8000/api/busquedas/" + opcion + "/join/",
+		type: "POST",
+		dataType: 'json',
+		data:{'user': id_global},
+		success: function(respuesta)
+		{
+			console.log(respuesta);
+			cargarBusquedas();
+		},
+		error: function(respuesta)
+		{
+			$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
+		}
+	});
 }
 function buscar_tesoro()
 {

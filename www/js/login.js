@@ -30,6 +30,7 @@ $(document).ready(function()
 					if (estado == "ok")
 					{
 						$("#username-global").val(respuesta.user);
+						$("#id-user-global").val(respuesta.id);
 						cargarPerfil();
 						$.mobile.changePage("#page3");
 					}
@@ -41,7 +42,6 @@ $(document).ready(function()
 					//console.log(respuesta);
 					//console.log("jsonexito");
 				},
-				
 				error: function(respuesta)
 				{
 					$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
