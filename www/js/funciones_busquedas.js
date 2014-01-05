@@ -104,7 +104,34 @@ function unirme_busqueda(opcion)
 }
 function buscar_tesoro(opcion)
 {
-	alert("Tesoro de la busqueda " + opcion + " capturado!");
+	var id_global = $("#id-user-global").val();
+	
+	$.ajax({
+		async: true,
+		url: "http://127.0.0.1:8000/api/busquedas/" + opcion + "/catch/",
+		type: "POST",
+		dataType: 'json',
+		data:{'user': id_global},
+		success: function(respuesta)
+		{
+			//console.log(respuesta);
+			if (respuesta.status == "catched")
+			{
+				$.mobile.changePage("#page6");
+			}
+			else if (respuesta.status == "busqueda cerrada")
+			{
+				$.mobile.changePage("dialog-boxes/error/tesoro-atrapado.html", {role:"dialog"}); //<-- cargar con ajax
+			}
+			else if (respuesta.status == "busqueda sin tesoros")
+			{
+				$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
+			}
+		},
+		error: function(respuesta)
+		{
+			$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
+		}
+	});
 	//document.getElementById('audio').play(); no logro que funcione
-	$.mobile.changePage("#page6");
 }
