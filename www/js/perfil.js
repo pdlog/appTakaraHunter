@@ -15,7 +15,7 @@ $(document).ready(function()
 function cargarPerfil()
 {
 	var username_global = $("#username-global").val();
-	var ip = $("#ip-server").val();
+	var ip = $("#ip-server-global").val();
 	console.log(username_global);
 	$.ajax({
 		async: true,
