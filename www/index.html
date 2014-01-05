@@ -7,9 +7,13 @@
 		<link rel='stylesheet' type='text/css' href='css/takara_hunter_1.min.css'/>
 		<title>TH | Bienvenido</title>
 		<style>
-			#mapa img
-			{
-				max-width: none;
+			#content {
+    			padding: 0;
+    			position : absolute !important; 
+    			top : 40px !important;  
+    			right : 0; 
+    			bottom : 40px !important;  
+    			left : 0 !important;     
 			}
 		</style>
 	</head>
@@ -77,21 +81,23 @@
 				<a href='#panel3' data-role='button' data-icon='home'>Menú</a>
 				<h1>Takara Hunter | Mi perfil</h1>
 			</div>
-			<div id='content3' data-role='content'>
+			
+			 <div data-role="content" id="content">
+            	<div id="map_canvas" style="height:100%"></div>
+       		 </div>
+			<!--<div id='content3' data-role='content'>
 				<p id='foto_perfil'></p>
 				<br>
 				<ul id='datos_personales_usuario' data-role="listview"></ul>
-				<p></p>
-				<br>
-				<p></p>
-				<center><div id="mapa-perfil" style="width: 200px; height: 200px"></div></center>
-			</div>
-			<br>
+			</div>-->
 			
 			<div id='footer3' data-role='footer' data-position='fixed'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
 			</div>
 		</div>
+		
+		
+		
 		<!------------------------------------------------------------ MIS BUSQUEDAS ------------------------------------------------------>
 		<div id='page4' data-role='page' data-theme='a'>
 			<div id='panel4' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
@@ -133,14 +139,11 @@
 				<a href='#panel5' data-role='button' data-icon='home'>Menú</a>
 				<h1>Takara Hunter | Buscando tesoro...</h1>
 			</div>
+			<center><div id="mapa" width="200px" height="200px"></div></center>
 			<div id='content5' data-role='content'>
 				<ul id='datos_busqueda_realizando' data-role="listview"></ul>
 				<br>
 				<a href='javascript:buscar_tesoro();' data-role='button' data-icon='search' data-theme='a'>Buscar tesoro</a>
-				<p></p>
-				<br>
-				<p></p>
-				<center><div id="mapa-busqueda" width="200px" height="200px"></div></center>
 			</div>
 			<div id='footer5' data-role='footer' data-position='fixed'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
@@ -246,11 +249,17 @@
 		<script type='text/javascript' src='js/funciones_busquedas.js'></script>
 		<script type='text/javascript' src='js/mapas.js'></script>
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOK5exbY-SG6W6cr-EoH2jv9llU2uOFyA&sensor=true"></script>
-		<script type='text/javascript'>
-			//app.initialize();
-		</script>
 		<script>
-		
-	</script>
+			//app.initialize();
+			$(document).on('pageinit', '#page3',function(e,data){    
+   				// This is the minimum zoom level that we'll allow
+   				var minZoomLevel = 12;
+
+   				var map = new google.maps.Map(document.getElementById('map_canvas'), {
+      			zoom: minZoomLevel,
+      			center: new google.maps.LatLng(38.50, -90.50),
+      			mapTypeId: google.maps.MapTypeId.ROADMAP
+   			});
+		</script>
 	</body>
 </html>

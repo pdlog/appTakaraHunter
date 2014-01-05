@@ -27,10 +27,10 @@ var descripcion_busqueda = "";
 
 $(document).ready(function()
 {
+	initialize();
 	login();
 	busquedas();
 	perfil();
 	sobre();
 	help();
-	initialize();
 });
