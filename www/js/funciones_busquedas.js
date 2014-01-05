@@ -1,9 +1,10 @@
 //---------------------------------------------------------------- EMPEZAR_BUSQUEDA ---------------------------------------------------------------*/
 function empezar_busqueda(opcion)
 {
+	var ip = $("#ip-server").val();
 	$.ajax({
 		async: true,
-		url: "http://127.0.0.1:8000/api/busquedas/" + opcion + "/",
+		url: "http://" + ip + ":8000/api/busquedas/" + opcion + "/",
 		type: "GET",
 		dataType: 'json',
 		success: function(respuesta)
@@ -13,7 +14,7 @@ function empezar_busqueda(opcion)
 			
 			$.ajax({
 				async: true,
-				url: "http://127.0.0.1:8000/api/tesoros/?busqueda=" + opcion,
+				url: "http://" + ip + ":8000/api/tesoros/?busqueda=" + opcion,
 				type: "GET",
 				dataType: 'json',
 				success: function(respuesta)
@@ -51,11 +52,12 @@ function empezar_busqueda(opcion)
 //---------------------------------------------------------------- ABANDONAR_BUSQUEDA ---------------------------------------------------------------*/
 function dejar_busqueda(opcion)
 {
+	var ip = $("#ip-server").val();
 	var id_global = $("#id-user-global").val();
 	
 	$.ajax({
 		async: true,
-		url: "http://127.0.0.1:8000/api/busquedas/" + opcion + "/unjoin/",
+		url: "http://" + ip + ":8000/api/busquedas/" + opcion + "/unjoin/",
 		type: "POST",
 		dataType: 'json',
 		data:{'user': id_global},
@@ -76,11 +78,12 @@ function dejar_busqueda(opcion)
 //---------------------------------------------------------------- UNIRME_BUSQUEDA ---------------------------------------------------------------*/
 function unirme_busqueda(opcion)
 {
+	var ip = $("#ip-server").val();
 	var id_global = $("#id-user-global").val();
 	
 	$.ajax({
 		async: true,
-		url: "http://127.0.0.1:8000/api/busquedas/" + opcion + "/join/",
+		url: "http://" + ip + ":8000/api/busquedas/" + opcion + "/join/",
 		type: "POST",
 		dataType: 'json',
 		data:{'user': id_global},
@@ -104,11 +107,12 @@ function unirme_busqueda(opcion)
 }
 function buscar_tesoro(opcion)
 {
+	var ip = $("#ip-server").val();
 	var id_global = $("#id-user-global").val();
 	
 	$.ajax({
 		async: true,
-		url: "http://127.0.0.1:8000/api/busquedas/" + opcion + "/catch/",
+		url: "http://" + ip + ":8000/api/busquedas/" + opcion + "/catch/",
 		type: "POST",
 		dataType: 'json',
 		data:{'user': id_global},

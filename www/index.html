@@ -18,6 +18,7 @@
 			<div id='panel1' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a href='#page2' data-role='button' data-icon='lock' data-theme='a'>Iniciar sesión</a>
+					<a class='botonconfig' href='' data-role='button' data-icon='gear' data-theme='a'>Configuración</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
@@ -39,6 +40,7 @@
 			<div id='panel2' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a href='#page1' data-role='button' data-icon='home' data-theme='a'>Página de inicio</a>
+					<a class='botonconfig' href='' data-role='button' data-icon='gear' data-theme='a'>Configuración</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
@@ -173,16 +175,26 @@
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
 			</div>
 		</div>
+		<!------------------------------------------------------------ CONFIGURACIÓN ------------------------------------------------------>
+		<div id='caja-config' data-role='page'>
+			<div data-role='header'>
+				<h1>Configuración</h1>
+			</div>
+			<div data-role='content'>
+				<h1>IP del servidor</h1>
+				<input id='ip-server' type='text'>
+			</div>
+		</div>
 		<!-------------------------------------------------------- VARIABLE GLOBALES QUE WARRO ------------------------------------------->
 		<input id='username-global' type='hidden'>
 		<input id='id-user-global' type='hidden'>
-		<input id='ip-server' type='hidden'>
 		<!---------------------------------------------------------------------- SCRIPTS ------------------------------------------------->
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/jquery_mobile.js'></script>
 		<!--<script type='text/javascript' src='js/fastclick.js'></script>-->
 		<script type='text/javascript' src='js/index.js'></script>
 		<script type='text/javascript' src='js/sobre.js'></script>
+		<script type='text/javascript' src='js/config.js'></script>
 		<script type='text/javascript' src='js/help.js'></script>
 		<script type='text/javascript' src='js/login.js'></script>
 		<script type='text/javascript' src='js/logout.js'></script>

@@ -15,6 +15,7 @@ $(document).ready(function()
 function cargarBusquedas()
 {
 	var id_global = $("#id-user-global").val();
+	var ip = $("#ip-server").val();
 	
 	var mis_busquedas = "";
 	var busquedas_disponibles = "";
@@ -22,7 +23,7 @@ function cargarBusquedas()
 	//Buscar las busquedas a las que me puedo unir.
 	$.ajax({
 		async: true,
-		url: "http://127.0.0.1:8000/api/busquedas/tojoin/?id=" + id_global,
+		url: "http://" + ip + ":8000/api/busquedas/tojoin/?id=" + id_global,
 		type: "GET",
 		dataType: 'json',
 		success: function(respuesta)
@@ -53,7 +54,7 @@ function cargarBusquedas()
 		
 	$.ajax({
 		async: true,
-		url: "http://127.0.0.1:8000/api/busquedas/?participantes=" + id_global + "&estado=a",
+		url: "http://" + ip + ":8000/api/busquedas/?participantes=" + id_global + "&estado=a",
 		type: "GET",
 		dataType: 'json',
 		success: function(respuesta)

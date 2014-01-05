@@ -3,6 +3,7 @@ $(document).ready(function()
 {
 	$("#boton-login").click(function(e)
 	{
+		var ip = $("#ip-server").val();
 		//console.log("ola1");
 		e.preventDefault();
 
@@ -15,7 +16,7 @@ $(document).ready(function()
 
 			$.ajax({
 				async: true,
-				url: "http://127.0.0.1:8000/loginMovil/",
+				url: "http://" + ip + ":8000/loginMovil/",
 				data:{'username': username,'password': password},
 				type: "POST",
 				dataType: 'json',
