@@ -127,9 +127,23 @@
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
 			<div id='content5' data-role='content'>
-				<ul id='datos_busqueda_realizando' data-role="listview"></ul>
+				<h1>Búsqueda</h1>
+				<input id='titulo_busqueda_realizando' type='text' readonly>
+				<input id='descripcion_busqueda_realizando' type='text' readonly>
+				<div class="ui-grid-a">
+			    	<div class="ui-block-a">
+			    		<h1>Yo</h1>
+			    		<input id='mix_busqueda_realizando' type='text' readonly>
+						<input id='miy_busqueda_realizando' type='text' readonly>
+			    	</div>
+					<div class="ui-block-b">
+						<h1>Tesoro</h1>
+						<input id='tesorox_busqueda_realizando' type='text' readonly>
+						<input id='tesoroy_busqueda_realizando' type='text' readonly>
+					</div>
+				</div>
 				<br>
-				<a href='javascript:buscar_tesoro();' data-role='button' data-icon='search' data-theme='a'>Buscar tesoro</a>
+				<a id='boton-atrapar-tesoro' href='' data-role='button' data-icon='search' data-theme='a'>Buscar tesoro</a>
 			</div>
 			<div id='footer5' data-role='footer' data-position='fixed'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
