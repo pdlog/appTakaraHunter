@@ -16,7 +16,9 @@
 			<div id='panel1' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a href='#page2' data-role='button' data-icon='lock' data-theme='a'>Iniciar sesión</a>
+
 					<a class='botonajustes' href='#caja-ajustes' data-role='button' data-icon='gear' data-theme='a'>Ajustes</a>
+
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
@@ -38,6 +40,7 @@
 			<div id='panel2' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a href='#page1' data-role='button' data-icon='home' data-theme='a'>Página de inicio</a>
+					<a class='botonconfig' href='' data-role='button' data-icon='gear' data-theme='a'>Configuración</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
@@ -135,9 +138,23 @@
 			</div>
 			<center><div id="mapa" width="200px" height="200px"></div></center>
 			<div id='content5' data-role='content'>
-				<ul id='datos_busqueda_realizando' data-role="listview"></ul>
+				<h1>Búsqueda</h1>
+				<input id='titulo_busqueda_realizando' type='text' readonly>
+				<input id='descripcion_busqueda_realizando' type='text' readonly>
+				<div class="ui-grid-a">
+			    	<div class="ui-block-a">
+			    		<h1>Yo</h1>
+			    		<input id='mix_busqueda_realizando' type='text' readonly>
+						<input id='miy_busqueda_realizando' type='text' readonly>
+			    	</div>
+					<div class="ui-block-b">
+						<h1>Tesoro</h1>
+						<input id='tesorox_busqueda_realizando' type='text' readonly>
+						<input id='tesoroy_busqueda_realizando' type='text' readonly>
+					</div>
+				</div>
 				<br>
-				<a href='javascript:buscar_tesoro();' data-role='button' data-icon='search' data-theme='a'>Buscar tesoro</a>
+				<a id='boton-atrapar-tesoro' href='' data-role='button' data-icon='search' data-theme='a'>Buscar tesoro</a>
 			</div>
 			<div id='footer5' data-role='footer' data-position='fixed'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
@@ -167,6 +184,7 @@
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
 			</div>
 		</div>
+
 		<!-------------------------------------------------------- AJUSTES ------------------------------------------->
 		<div id='caja-ajustes' data-role='page'>
 			<div data-role='header'>
@@ -182,18 +200,31 @@
 			</div>
 			<div data-role='footer'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter</h1>
+
+		<!------------------------------------------------------------ CONFIGURACIÓN ------------------------------------------------------>
+		<div id='caja-config' data-role='page'>
+			<div data-role='header'>
+				<h1>Configuración</h1>
+			</div>
+			<div data-role='content'>
+				<h1>IP del servidor</h1>
+				<input id='ip-server' type='text'>
+
 			</div>
 		</div>
 		<!-------------------------------------------------------- VARIABLE GLOBALES QUE WARRO ------------------------------------------->
 		<input id='username-global' type='hidden'>
 		<input id='id-user-global' type='hidden'>
+
 		<input id='ip-server-global' type='hidden' value='127.0.0.1'>
+
 		<!---------------------------------------------------------------------- SCRIPTS ------------------------------------------------->
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/jquery_mobile.js'></script>
 		<!--<script type='text/javascript' src='js/fastclick.js'></script>-->
 		<script type='text/javascript' src='js/index.js'></script>
 		<script type='text/javascript' src='js/sobre.js'></script>
+		<script type='text/javascript' src='js/config.js'></script>
 		<script type='text/javascript' src='js/help.js'></script>
 		<script type='text/javascript' src='js/login.js'></script>
 		<script type='text/javascript' src='js/logout.js'></script>

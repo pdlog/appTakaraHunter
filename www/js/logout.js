@@ -3,9 +3,10 @@ $(document).ready(function()
 {
 	$(".boton-logout").click(function(e)
 	{
+		var ip = $("#ip-server").val();
 		$.ajax({
 			async: true,
-			url: "http://127.0.0.1:8000/logoutMovil/",
+			url: "http://" + ip + ":8000/logoutMovil/",
 			type: "GET",
 			dataType: 'json',
 			success: function(respuesta)

@@ -15,10 +15,11 @@ $(document).ready(function()
 function cargarPerfil()
 {
 	var username_global = $("#username-global").val();
+	var ip = $("#ip-server").val();
 	console.log(username_global);
 	$.ajax({
 		async: true,
-		url: "http://127.0.0.1:8000/api/users/?username=" + username_global,
+		url: "http://" + ip + ":8000/api/users/?username=" + username_global,
 		type: "GET",
 		dataType: 'json',
 		success: function(respuesta)
