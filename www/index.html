@@ -2,20 +2,13 @@
 <html lang='es'>
 	<head>
 		<meta charset='utf-8'>
+		<meta name="description" content="APP para realización de búsquedas de tesoros">
+		<meta name="author" content="Jesús Rodríguez Pérez, Raúl Arroyo Lubián, Pedro Daniel López González, Alfonso Lacalle García">
+	
 		<link rel='stylesheet' type='text/css' href='css/jquery_mobile.css'/>
 		<link rel='stylesheet' type='text/css' href='css/jquery.mobile.icons.min.css'/>
 		<link rel='stylesheet' type='text/css' href='css/takara_hunter_1.min.css'/>
 		<title>TH | Bienvenido</title>
-		<style>
-			#content {
-    			padding: 0;
-    			position : absolute !important; 
-    			top : 40px !important;  
-    			right : 0; 
-    			bottom : 40px !important;  
-    			left : 0 !important;     
-			}
-		</style>
 	</head>
 	<body>
 		<!------------------------------------------------------------ PÁGINA BIENVENIDA -------------------------------------------------->
@@ -23,14 +16,15 @@
 			<div id='panel1' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a href='#page2' data-role='button' data-icon='lock' data-theme='a'>Iniciar sesión</a>
-					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
+					<a class='botonajustes' href='#caja-ajustes' data-role='button' data-icon='gear' data-theme='a'>Ajustes</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
 			</div>
 			<div id='header1' data-role='header' data-position='fixed'>
 				<a href='#panel1' data-role='button' data-icon='home'>Menú</a>
-				<h1>Takara Hunter | Página de Inicio</h1>
+				<h1>Bienvenido</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
 			<div id='content1' data-role='content'>
 				
@@ -44,14 +38,14 @@
 			<div id='panel2' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a href='#page1' data-role='button' data-icon='home' data-theme='a'>Página de inicio</a>
-					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
 			</div>
 			<div id='header2' data-role='header' data-position='fixed'>
 				<a href='#panel2' data-role='button' data-icon='home'>Menú</a>
-				<h1>Takara Hunter | Iniciar sesión</h1>
+				<h1>Iniciar sesión</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
 			<div id='content2' data-role='content'>
 				<form id='form-login' action=''>
@@ -70,27 +64,27 @@
 		<div id='page3' data-role='page' data-theme='a'>
 			<div id='panel3' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
-					<a class='boton-lista-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
-					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
-					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
+					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
 			</div>
 			<div id='header3' data-role='header' data-position='fixed'>
 				<a href='#panel3' data-role='button' data-icon='home'>Menú</a>
-				<h1>Takara Hunter | Mi perfil</h1>
+				<h1>Mi perfil</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
 			
 			 <div data-role="content" id="content">
             	<div id="map_canvas" style="height:100%"></div>
        		 </div>
-			<!--<div id='content3' data-role='content'>
+			<div id='content3' data-role='content'>
 				<p id='foto_perfil'></p>
 				<br>
 				<ul id='datos_personales_usuario' data-role="listview"></ul>
-			</div>-->
-			
+			</div>
+			</div>
 			<div id='footer3' data-role='footer' data-position='fixed'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
 			</div>
@@ -103,15 +97,15 @@
 			<div id='panel4' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
-					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
-					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
+					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
 			</div>
 			<div id='header4' data-role='header' data-position='fixed'>
 				<a href='#panel4' data-role='button' data-icon='home'>Menú</a>
-				<h1>Takara Hunter | Búsquedas</h1>
+				<h1>Búsquedas</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
 			<div id='content4' data-role='content'>
 				<h1>Mis búsquedas</h1>
@@ -128,16 +122,16 @@
 			<div id='panel5' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
-					<a class='boton-lista-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
-					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
-					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
+					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
 			</div>
 			<div id='header5' data-role='header' data-position='fixed'>
 				<a href='#panel5' data-role='button' data-icon='home'>Menú</a>
-				<h1>Takara Hunter | Buscando tesoro...</h1>
+				<h1>Buscando tesoro...</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
 			<center><div id="mapa" width="200px" height="200px"></div></center>
 			<div id='content5' data-role='content'>
@@ -154,16 +148,16 @@
 			<div id='panel6' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
-					<a class='boton-lista-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
-					<a href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
-					<a class='botonhelp' href='' data-role='button' data-icon='info' data-theme='a'>Ayuda</a>
+					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
 			</div>
 			<div id='header6' data-role='header' data-position='fixed'>
 				<a href='#panel6' data-role='button' data-icon='home'>Menú</a>
-				<h1>Takara Hunter | Tesoro atrapado</h1>
+				<h1>¡Tesoro atrapado!</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
 			<div id='content6' data-role='content'>
 				<!--<audio id='audio' src='sounds/shop.mp3'></audio> no logro que funcione el sound-->
@@ -173,69 +167,27 @@
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
 			</div>
 		</div>
-		<!-------------------------------------------------------------------- SOBRE LA APP ----------------------------------------------->
-		<div id='caja-sobre-app' data-role='page'>
+		<!-------------------------------------------------------- AJUSTES ------------------------------------------->
+		<div id='caja-ajustes' data-role='page'>
 			<div data-role='header'>
-				<h1>Sobre la aplicación</h1>
+				<h1>Ajustes</h1>
 			</div>
 			<div data-role='content'>
-				<ul data-role="listview">
-					<li data-role='list-divider'>Autores</li>
-					<li>Arroyo Lubián Raúl - i02arlur@uco.es</li>
-					<li>Lacalle Garcíai Alfonso - 52lagaa@uco.es</li>
-					<li>López González Pedro Daniel - i02logop@uco.es</li>
-					<li>Rodríguez Pérez Jesús - i02roprj@uco.es</li>
-				</ul>
+				<form id='form-login' action=''>
+					<div data-role='fieldcontain'>
+						<label for='serverip'>IP del Servidor</label><input type='text' name='serverip' id='serverip'>       
+					</div>
+					<input type='submit' id='boton-guardar' value='Guardar'>
+				</form>
 			</div>
 			<div data-role='footer'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter</h1>
 			</div>
 		</div>
-		<!-------------------------------------------------------------------- HELP ----------------------------------------------->
-		<div id='caja-help' data-role='page'>
-			<div data-role='header'>
-				<h1>Ayuda</h1>
-			</div>
-			<div data-role='content'>
-				
-			</div>
-			<div data-role='footer'>
-				<h1><img src='img/favicon.png'> 2014 Takara Hunter</h1>
-			</div>
-		</div>
-		<!--------------------------------------------------------------- MENSAJES DE ERROR ----------------------------------------------->
-		<div id='caja-no-username-no-password' data-role='page'>
-			<div data-role='header'>
-				<h1>Error</h1>
-			</div>
-			<div data-role='content'>
-				<p>No has introducido ni un nombre de usuario ni una contraseña.</p>
-			</div>
-		</div>
-		<div id='caja-no-username' data-role='page'>
-			<div data-role='header'>
-				<h1>Error</h1>
-			</div>
-			<div data-role='content'>
-				<p>No has introducido un nombre de usuario.</p>
-			</div>
-		</div>
-		<div id='caja-no-password' data-role='page'>
-			<div data-role='header'>
-				<h1>Error</h1>
-			</div>
-			<div data-role='content'>
-				<p>No has introducido una contraseña.</p>
-			</div>
-		</div>
-		<div id='ajax-failed' data-role='page'>
-			<div data-role='header'>
-				<h1>Error</h1>
-			</div>
-			<div data-role='content'>
-				<p>Ha habido un error conectando con el servidor, pruebe más tarde.</p>
-			</div>
-		</div>
+		<!-------------------------------------------------------- VARIABLE GLOBALES QUE WARRO ------------------------------------------->
+		<input id='username-global' type='hidden'>
+		<input id='id-user-global' type='hidden'>
+		<input id='ip-server-global' type='hidden' value='127.0.0.1'>
 		<!---------------------------------------------------------------------- SCRIPTS ------------------------------------------------->
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/jquery_mobile.js'></script>
@@ -244,12 +196,14 @@
 		<script type='text/javascript' src='js/sobre.js'></script>
 		<script type='text/javascript' src='js/help.js'></script>
 		<script type='text/javascript' src='js/login.js'></script>
+		<script type='text/javascript' src='js/logout.js'></script>
 		<script type='text/javascript' src='js/perfil.js'></script>
 		<script type='text/javascript' src='js/busquedas.js'></script>
 		<script type='text/javascript' src='js/funciones_busquedas.js'></script>
 		<script type='text/javascript' src='js/mapas.js'></script>
+		<script type='text/javascript' src='js/ajustes.js'></script>
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOK5exbY-SG6W6cr-EoH2jv9llU2uOFyA&sensor=true"></script>
-		<script>
+		<script type='text/javascript'>
 			//app.initialize();
 			$(document).on('pageinit', '#page3',function(e,data){    
    				// This is the minimum zoom level that we'll allow
