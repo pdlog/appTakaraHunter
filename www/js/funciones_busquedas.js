@@ -1,7 +1,7 @@
 //---------------------------------------------------------------- EMPEZAR_BUSQUEDA ---------------------------------------------------------------*/
 function empezar_busqueda(opcion)
 {
-	var ip = $("#ip-server").val();
+	var ip = $("#ip-server-global").val();
 	$.ajax({
 		async: true,
 		url: "http://" + ip + ":8000/api/busquedas/" + opcion + "/",
@@ -52,7 +52,7 @@ function empezar_busqueda(opcion)
 //---------------------------------------------------------------- ABANDONAR_BUSQUEDA ---------------------------------------------------------------*/
 function dejar_busqueda(opcion)
 {
-	var ip = $("#ip-server").val();
+	var ip = $("#ip-server-global").val();
 	var id_global = $("#id-user-global").val();
 	
 	$.ajax({
@@ -78,7 +78,7 @@ function dejar_busqueda(opcion)
 //---------------------------------------------------------------- UNIRME_BUSQUEDA ---------------------------------------------------------------*/
 function unirme_busqueda(opcion)
 {
-	var ip = $("#ip-server").val();
+	var ip = $("#ip-server-global").val();
 	var id_global = $("#id-user-global").val();
 	
 	$.ajax({
@@ -107,7 +107,7 @@ function unirme_busqueda(opcion)
 }
 function buscar_tesoro(opcion)
 {
-	var ip = $("#ip-server").val();
+	var ip = $("#ip-server-global").val();
 	var id_global = $("#id-user-global").val();
 	
 	$.ajax({

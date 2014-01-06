@@ -8,6 +8,7 @@
 		<link rel='stylesheet' type='text/css' href='css/jquery_mobile.css'/>
 		<link rel='stylesheet' type='text/css' href='css/jquery.mobile.icons.min.css'/>
 		<link rel='stylesheet' type='text/css' href='css/takara_hunter_1.min.css'/>
+		<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
 		<title>TH | Bienvenido</title>
 	</head>
 	<body>
@@ -68,7 +69,7 @@
 			<div id='panel3' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
-					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
@@ -78,15 +79,13 @@
 				<h1>Mi perfil</h1>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
-			
-			 <div data-role="content" id="content">
-            	<div id="map_canvas" style="height:100%"></div>
-       		 </div>
 			<div id='content3' data-role='content'>
 				<p id='foto_perfil'></p>
 				<br>
 				<ul id='datos_personales_usuario' data-role="listview"></ul>
 			</div>
+			<div id='content-map' data-role='content'>
+					<div id="map_canvas" style="height:200px; width:200px;"></div>
 			</div>
 			<div id='footer3' data-role='footer' data-position='fixed'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
@@ -100,7 +99,7 @@
 			<div id='panel4' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
-					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
@@ -126,7 +125,7 @@
 				<div class='panel-content'>
 					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
 					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
-					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
@@ -166,7 +165,7 @@
 				<div class='panel-content'>
 					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
 					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
-					<a class='boton-logout' href='#page1' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
@@ -221,18 +220,22 @@
 		<script type='text/javascript' src='js/funciones_busquedas.js'></script>
 		<script type='text/javascript' src='js/mapas.js'></script>
 		<script type='text/javascript' src='js/ajustes.js'></script>
+		<script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOK5exbY-SG6W6cr-EoH2jv9llU2uOFyA&sensor=true"></script>
 		<script type='text/javascript'>
+			//$.mobile.ajaxEnabled = false; // <-- THIS IS PRO CODE (RESUELVE EL CORTE DE LOS MAPAS)
 			//app.initialize();
-			$(document).on('pageinit', '#page3',function(e,data){    
+			/*$(document).on('pageinit', '#page3',function(e,data){    
    				// This is the minimum zoom level that we'll allow
    				var minZoomLevel = 12;
 
-   				var map = new google.maps.Map(document.getElementById('map_canvas'), {
+   				var map = new google.maps.Map(document.getElementById('map-canvas'), {
       			zoom: minZoomLevel,
       			center: new google.maps.LatLng(38.50, -90.50),
       			mapTypeId: google.maps.MapTypeId.ROADMAP
-   			});
+   			});*/
 		</script>
+		
+		
 	</body>
 </html>

@@ -14,7 +14,6 @@
 		//console.log("Hola1");
 		new FastClick(document.body);
 	}		
-<<<<<<< HEAD
 }*/
 
 var he_entrado_en_una_busqueda_antes = false; // PARA KE LA CAZA SE VEA BIEN MODO WARRO NIVEL DIOS
@@ -27,6 +26,7 @@ var descripcion_busqueda = "";
 
 $(document).ready(function()
 {
+	
 	initialize();
 	login();
 	busquedas();
@@ -36,6 +36,5 @@ $(document).ready(function()
 });
 
 var descripcion_busqueda = "";
-=======
-}*/
->>>>>>> f993ca7086a4ad1272dbe2fb31942ab8dc6345f2
+}
+

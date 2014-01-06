@@ -1,12 +1,15 @@
-function initialize()
-		{
-			var x = 37.891594752147114;//document.getElementById('user_px').value;
+
+var mapOptions, map, marker;
+			
+$(document).on('pageinit', '#page3',function(e,data){    
+			
+         	var x = 37.891594752147114;//document.getElementById('user_px').value;
 			var y = -4.784485399999994;//document.getElementById('user_py').value;
 			var center = new google.maps.LatLng(x, y);
-			var mapOptions =
+			mapOptions =
 			{
 				center:center,
-				zoom:4,
+				zoom:12,
 				mapTypeId:google.maps.MapTypeId.ROADMAP,
 				draggable:true,
 				panControl:false,
@@ -16,9 +19,10 @@ function initialize()
 				streetViewControl:false,
 				overviewMapControl:false,
 			};
-			var map = new google.maps.Map(document.getElementById('mapa'), mapOptions);
+			
+			map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
   			
-  			var marker = new google.maps.Marker(
+  			marker = new google.maps.Marker(
   			{
     			map:map,
     			draggable:false,
@@ -26,4 +30,27 @@ function initialize()
     			position: center,
     			icon: 'img/moneda_takara.png' 
   			});
-		}
+  		});
+  		
+  		
+  		// CODIGO PRO QUE RESUELVE EL CORTE DE LOS MAPAS (4:41 de la mañana)
+  		$('#page3').on('pageshow',function(event){
+			google.maps.event.trigger(map, 'resize');
+            map.setOptions(mapOptions); 
+            map.setMarker(marker);
+		});
+
+			
+			
+  			
+  			
+			/*
+			$('#page3').on("pageinit", function() {
+     			$('#map_canvas').gmap(mapOptions, marker);
+			});*/
+  			
+
+
+
+
+
