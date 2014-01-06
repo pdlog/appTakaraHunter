@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang='es'>
+	<head>
+		<meta charset='utf-8'>
+		<meta name="description" content="APP para realización de búsquedas de tesoros">
+		<meta name="author" content="Jesús Rodríguez Pérez, Raúl Arroyo Lubián, Pedro Daniel López González, Alfonso Lacalle García">
+	
+		<link rel='stylesheet' type='text/css' href='css/jquery_mobile.css'/>
+		<link rel='stylesheet' type='text/css' href='css/jquery.mobile.icons.min.css'/>
+		<link rel='stylesheet' type='text/css' href='css/takara_hunter_1.min.css'/>
+		<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+		<title>TH | Bienvenido</title>
+	</head>
+	<body>
+		<!------------------------------------------------------------ PÁGINA BIENVENIDA -------------------------------------------------->
+		<div id='page1' data-role='page' data-theme='a'>
+			<div id='panel1' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+				<div class='panel-content'>
+					<a href='#page2' data-role='button' data-icon='lock' data-theme='a'>Iniciar sesión</a>
+					<a class='botonconfig' href='' data-role='button' data-icon='gear' data-theme='a'>Configuración</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
+					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
+				</div>
+			</div>
+			<div id='header1' data-role='header' data-position='fixed'>
+				<a href='#panel1' data-role='button' data-icon='home'>Menú</a>
+				<h1>Bienvenido</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
+			</div>
+			<div id='content1' data-role='content'>
+				
+			</div>
+			<div id='footer1' data-role='footer' data-position='fixed'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!------------------------------------------------------------ INICIO SESIÓN ------------------------------------------------------>
+		<div id='page2' data-role='page' data-theme='a'>
+			<div id='panel2' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+				<div class='panel-content'>
+					<a href='#page1' data-role='button' data-icon='home' data-theme='a'>Página de inicio</a>
+					<a class='botonconfig' href='' data-role='button' data-icon='gear' data-theme='a'>Configuración</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
+					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
+				</div>
+			</div>
+			<div id='header2' data-role='header' data-position='fixed'>
+				<a href='#panel2' data-role='button' data-icon='home'>Menú</a>
+				<h1>Iniciar sesión</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
+			</div>
+			<div id='content2' data-role='content'>
+				<form id='form-login' action=''>
+					<div data-role='fieldcontain'>
+						<label for='username-login'>Nombre de usuario:</label><input type='text' name='username-login' id='username-login' placeholder='Pepito'>       
+						<label for='password-login'>Contraseña:</label><input type='password' name='password-login' id='password-login' placeholder='Contraseña'>
+					</div>
+					<input type='submit' id='boton-login' value='Iniciar sesión'>
+				</form>
+			</div>
+			<div id='footer2' data-role='footer' data-position='fixed'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!------------------------------------------------------------ MI PERFIL ------------------------------------------------------>
+		<div id='page3' data-role='page' data-theme='a'>
+			<div id='panel3' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+				<div class='panel-content'>
+					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
+					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
+				</div>
+			</div>
+			<div id='header3' data-role='header' data-position='fixed'>
+				<a href='#panel3' data-role='button' data-icon='home'>Menú</a>
+				<h1>Mi perfil</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
+			</div>
+			<div id='content3' data-role='content'>
+				<p id='foto_perfil'></p>
+				<br>
+				<ul id='datos_personales_usuario' data-role="listview"></ul>
+			</div>
+			<div id='content-map' data-role='content'>
+				<div id="mapaperfil" style="height:200px; width:100%;"></div>
+			</div>
+			<div id='footer3' data-role='footer' data-position='fixed'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!------------------------------------------------------------ MIS BUSQUEDAS ------------------------------------------------------>
+		<div id='page4' data-role='page' data-theme='a'>
+			<div id='panel4' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+				<div class='panel-content'>
+					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
+					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
+					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
+				</div>
+			</div>
+			<div id='header4' data-role='header' data-position='fixed'>
+				<a href='#panel4' data-role='button' data-icon='home'>Menú</a>
+				<h1>Búsquedas</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
+			</div>
+			<div id='content4' data-role='content'>
+				<h1>Mis búsquedas</h1>
+				<ul id='mis-busquedas' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-split-icon='delete'></ul>
+				<h1>Búsquedas disponibles</h1>
+				<ul id='busquedas-disponibles' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-icon='check'></ul>
+			</div>
+			<div id='footer4' data-role='footer' data-position='fixed'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!------------------------------------------------------------ REALIZACIÓN BÚSQUEDA ------------------------------------------------------>
+		<div id='page5' data-role='page' data-theme='a'>
+			<div id='panel5' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+				<div class='panel-content'>
+					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
+					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
+					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
+				</div>
+			</div>
+			<div id='header5' data-role='header' data-position='fixed'>
+				<a href='#panel5' data-role='button' data-icon='home'>Menú</a>
+				<h1>Buscando tesoro...</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
+			</div>
+			<center><div id="mapa" width="200px" height="200px"></div></center>
+			<div id='content5' data-role='content'>
+				<h1>Búsqueda</h1>
+				<input id='titulo_busqueda_realizando' type='text' readonly>
+				<input id='descripcion_busqueda_realizando' type='text' readonly>
+				<div class="ui-grid-a">
+			    	<div class="ui-block-a">
+			    		<h1>Yo</h1>
+			    		<input id='mix_busqueda_realizando' type='text' readonly>
+						<input id='miy_busqueda_realizando' type='text' readonly>
+			    	</div>
+					<div class="ui-block-b">
+						<h1>Tesoro</h1>
+						<input id='tesorox_busqueda_realizando' type='text' readonly>
+						<input id='tesoroy_busqueda_realizando' type='text' readonly>
+					</div>
+				</div>
+				<br>
+				<a id='boton-atrapar-tesoro' href='' data-role='button' data-icon='search' data-theme='a'>Buscar tesoro</a>
+			</div>
+			<div id='footer5' data-role='footer' data-position='fixed'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!------------------------------------------------------------ ATRAPAR TESORO ------------------------------------------------------>
+		<div id='page6' data-role='page' data-theme='a'>
+			<div id='panel6' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+				<div class='panel-content'>
+					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
+					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
+					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
+					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
+					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
+				</div>
+			</div>
+			<div id='header6' data-role='header' data-position='fixed'>
+				<a href='#panel6' data-role='button' data-icon='home'>Menú</a>
+				<h1>¡Tesoro atrapado!</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
+			</div>
+			<div id='content6' data-role='content'>
+				<!--<audio id='audio' src='sounds/shop.mp3'></audio> no logro que funcione el sound-->
+				<center><img src='img/takara_wallpaper.png' height='150' weight='150'></center>
+			</div>
+			<div id='footer6' data-role='footer' data-position='fixed'>
+				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+			</div>
+		</div>
+		<!------------------------------------------------------------ CONFIGURACIÓN ------------------------------------------------------>
+		<div id='caja-config' data-role='page'>
+			<div data-role='header'>
+				<h1>Configuración</h1>
+			</div>
+			<div data-role='content'>
+				<h1>IP del servidor</h1>
+				<input id='ip-server' type='text' value='127.0.0.1'>
+			</div>
+		</div>
+		<!-------------------------------------------------------- VARIABLE GLOBALES QUE WARRO ------------------------------------------->
+		<input id='username-global' type='hidden'>
+		<input id='id-user-global' type='hidden'>
+		<!---------------------------------------------------------------------- SCRIPTS ------------------------------------------------->
+		<script type='text/javascript' src='js/jquery.js'></script>
+		<script type='text/javascript' src='js/jquery_mobile.js'></script>
+		<!--<script type='text/javascript' src='js/fastclick.js'></script>-->
+		<script type='text/javascript' src='js/index.js'></script>
+		<script type='text/javascript' src='js/sobre.js'></script>
+		<script type='text/javascript' src='js/config.js'></script>
+		<script type='text/javascript' src='js/help.js'></script>
+		<script type='text/javascript' src='js/login.js'></script>
+		<script type='text/javascript' src='js/logout.js'></script>
+		<script type='text/javascript' src='js/perfil.js'></script>
+		<script type='text/javascript' src='js/busquedas.js'></script>
+		<script type='text/javascript' src='js/funciones_busquedas.js'></script>
+		<script type='text/javascript' src='js/mapas.js'></script>
+		<script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOK5exbY-SG6W6cr-EoH2jv9llU2uOFyA&sensor=true"></script>
+		<script type='text/javascript'>
+			//$.mobile.ajaxEnabled = false; // <-- THIS IS PRO CODE (RESUELVE EL CORTE DE LOS MAPAS)
+			//app.initialize();
+			/*$(document).on('pageinit', '#page3',function(e,data){    
+   				// This is the minimum zoom level that we'll allow
+   				var minZoomLevel = 12;
+
+   				var map = new google.maps.Map(document.getElementById('map-canvas'), {
+      			zoom: minZoomLevel,
+      			center: new google.maps.LatLng(38.50, -90.50),
+      			mapTypeId: google.maps.MapTypeId.ROADMAP
+   			});*/
+		</script>
+	</body>
+</html>
