@@ -15,7 +15,7 @@ $(document).ready(function()
 function cargarBusquedas()
 {
 	var id_global = $("#id-user-global").val();
-	var ip = $("#ip-server-global").val();
+	var ip = $("#ip-server").val();
 	
 	var mis_busquedas = "";
 	var busquedas_disponibles = "";

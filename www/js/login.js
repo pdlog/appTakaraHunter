@@ -9,7 +9,7 @@ $(document).ready(function()
 
 		var username = $("#username-login").val();
 		var password = $("#password-login").val();
-		var ip = $("#ip-server-global").val();
+
 		if(username != '' && password != '')
 		{
 			$("#boton-login").attr("disabled","disabled");

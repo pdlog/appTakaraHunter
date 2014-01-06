@@ -3,7 +3,8 @@ $(document).ready(function()
 {
 	$(".boton-logout").click(function(e)
 	{
-		var ip = $("#ip-server-global").val();
+		var ip = $("#ip-server").val();
+		
 		$.ajax({
 			async: true,
 			url: "http://" + ip + ":8000/logoutMovil/",
