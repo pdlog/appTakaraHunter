@@ -33,7 +33,7 @@ $(document).on('pageinit', '#page3',function(e,data){
   		});
   		
   		
-  		// CODIGO PRO QUE RESUELVE EL CORTE DE LOS MAPAS (4:41 de la mañana)
+  		// CODIGO PRO QUE RESUELVE EL CORTE DE LOS MAPAS (Hora de resolución: 4:41h)
   		$('#page3').on('pageshow',function(event){
 			google.maps.event.trigger(map, 'resize');
             map.setOptions(mapOptions); 
