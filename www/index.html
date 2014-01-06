@@ -14,16 +14,16 @@
 	<body>
 		<!------------------------------------------------------------ PÁGINA BIENVENIDA -------------------------------------------------->
 		<div id='page1' data-role='page' data-theme='a'>
-			<div id='panel1' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+			<!--<div id='panel1' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a href='#page2' data-role='button' data-icon='lock' data-theme='a'>Iniciar sesión</a>
 					<a class='botonconfig' href='' data-role='button' data-icon='gear' data-theme='a'>Configuración</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
-			</div>
+			</div>-->
 			<div id='header1' data-role='header' data-position='fixed'>
-				<a href='#panel1' data-role='button' data-icon='home'>Menú</a>
+				<!--<a href='#panel1' data-role='button' data-icon='home'>Menú</a>-->
 				<h1>Bienvenido</h1>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
@@ -31,21 +31,28 @@
 				
 			</div>
 			<div id='footer1' data-role='footer' data-position='fixed'>
-				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
+				<div data-role="navbar">
+					<ul>
+						<li><a href='#page2' data-icon='lock'>Iniciar sesión</a></li>
+						<li><a class='botonconfig' href='' data-icon='gear'>Configuración</a></li>
+						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
+					</ul>
+			    </div>
 			</div>
 		</div>
 		<!------------------------------------------------------------ INICIO SESIÓN ------------------------------------------------------>
 		<div id='page2' data-role='page' data-theme='a'>
-			<div id='panel2' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+			<!--<div id='panel2' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a href='#page1' data-role='button' data-icon='home' data-theme='a'>Página de inicio</a>
 					<a class='botonconfig' href='' data-role='button' data-icon='gear' data-theme='a'>Configuración</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
-			</div>
+			</div>-->
 			<div id='header2' data-role='header' data-position='fixed'>
-				<a href='#panel2' data-role='button' data-icon='home'>Menú</a>
+				<!--<a href='#panel2' data-role='button' data-icon='home'>Menú</a>-->
 				<h1>Iniciar sesión</h1>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
@@ -59,21 +66,28 @@
 				</form>
 			</div>
 			<div id='footer2' data-role='footer' data-position='fixed'>
-				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
+				<div data-role="navbar">
+					<ul>
+						<li><a href='#page1' data-icon='home'>Página de inicio</a></li>
+						<li><a class='botonconfig' href='' data-icon='gear'>Configuración</a></li>
+						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
+					</ul>
+			    </div>
 			</div>
 		</div>
 		<!------------------------------------------------------------ MI PERFIL ------------------------------------------------------>
 		<div id='page3' data-role='page' data-theme='a'>
-			<div id='panel3' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+			<!--<div id='panel3' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
 					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
-			</div>
+			</div>-->
 			<div id='header3' data-role='header' data-position='fixed'>
-				<a href='#panel3' data-role='button' data-icon='home'>Menú</a>
+				<!--<a href='#panel3' data-role='button' data-icon='home'>Menú</a>-->
 				<h1>Mi perfil</h1>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
@@ -86,21 +100,28 @@
 				<div id="mapaperfil" style="height:200px; width:100%;"><center>Cargando mapa...</center></div>
 			</div>
 			<div id='footer3' data-role='footer' data-position='fixed'>
-				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
+				<div data-role="navbar">
+					<ul>
+						<li><a class='boton-busquedas' href='#page4' data-icon='location'>Búsquedas</a></li>
+						<li><a class='boton-logout' href='' data-icon='lock'>Cerrar sesión</a></li>
+						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
+					</ul>
+			    </div>
 			</div>
 		</div>
 		<!------------------------------------------------------------ MIS BUSQUEDAS ------------------------------------------------------>
 		<div id='page4' data-role='page' data-theme='a'>
-			<div id='panel4' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+			<!--<div id='panel4' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
 					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
-			</div>
+			</div>-->
 			<div id='header4' data-role='header' data-position='fixed'>
-				<a href='#panel4' data-role='button' data-icon='home'>Menú</a>
+				<!--<a href='#panel4' data-role='button' data-icon='home'>Menú</a>-->
 				<h1>Búsquedas</h1>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
@@ -111,12 +132,19 @@
 				<ul id='busquedas-disponibles' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-icon='check'></ul>
 			</div>
 			<div id='footer4' data-role='footer' data-position='fixed'>
-				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
+				<div data-role="navbar">
+					<ul>
+						<li><a class='boton-perfil' href='#page3' data-icon='user'>Mi perfil</a></li>
+						<li><a class='boton-logout' href='' data-icon='lock'>Cerrar sesión</a></li>
+						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
+					</ul>
+			    </div>
 			</div>
 		</div>
 		<!------------------------------------------------------------ REALIZACIÓN BÚSQUEDA ------------------------------------------------------>
 		<div id='page5' data-role='page' data-theme='a'>
-			<div id='panel5' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+			<!--<div id='panel5' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
 					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
@@ -124,9 +152,9 @@
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
-			</div>
+			</div>-->
 			<div id='header5' data-role='header' data-position='fixed'>
-				<a href='#panel5' data-role='button' data-icon='home'>Menú</a>
+				<!--<a href='#panel5' data-role='button' data-icon='home'>Menú</a>-->
 				<h1>Buscando tesoro...</h1>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
@@ -151,12 +179,20 @@
 				<a id='boton-atrapar-tesoro' href='' data-role='button' data-icon='search' data-theme='a'>Buscar tesoro</a>
 			</div>
 			<div id='footer5' data-role='footer' data-position='fixed'>
-				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
+				<div data-role="navbar">
+					<ul>
+						<li><a class='boton-perfil' href='#page3' data-icon='user'>Mi perfil</a></li>
+						<li><a class='boton-busquedas' href='#page4' data-icon='location'>Búsquedas</a></li>
+						<li><a class='boton-logout' href='' data-icon='lock'>Cerrar sesión</a></li>
+						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
+					</ul>
+			    </div>
 			</div>
 		</div>
 		<!------------------------------------------------------------ ATRAPAR TESORO ------------------------------------------------------>
 		<div id='page6' data-role='page' data-theme='a'>
-			<div id='panel6' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
+			<!--<div id='panel6' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
 					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
@@ -164,9 +200,9 @@
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
-			</div>
+			</div>-->
 			<div id='header6' data-role='header' data-position='fixed'>
-				<a href='#panel6' data-role='button' data-icon='home'>Menú</a>
+				<!--<a href='#panel6' data-role='button' data-icon='home'>Menú</a>-->
 				<h1>¡Tesoro atrapado!</h1>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
@@ -175,7 +211,15 @@
 				<center><img src='img/takara_wallpaper.png' height='150' weight='150'></center>
 			</div>
 			<div id='footer6' data-role='footer' data-position='fixed'>
-				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
+				<div data-role="navbar">
+					<ul>
+						<li><a class='boton-perfil' href='#page3' data-icon='user'>Mi perfil</a></li>
+						<li><a class='boton-busquedas' href='#page4' data-icon='location'>Búsquedas</a></li>
+						<li><a class='boton-logout' href='' data-icon='lock'>Cerrar sesión</a></li>
+						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
+					</ul>
+			    </div>
 			</div>
 		</div>
 		<!------------------------------------------------------------ CONFIGURACIÓN ------------------------------------------------------>
@@ -210,6 +254,7 @@
 		<script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOK5exbY-SG6W6cr-EoH2jv9llU2uOFyA&sensor=true"></script>
 		<script type='text/javascript'>
+			//document.addEventListener("deviceready", onDeviceReady, false);
 			//$.mobile.ajaxEnabled = false; // <-- THIS IS PRO CODE (RESUELVE EL CORTE DE LOS MAPAS)
 			//app.initialize();
 			/*$(document).on('pageinit', '#page3',function(e,data){    

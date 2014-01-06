@@ -1,11 +1,10 @@
-
 var mapOptions;
 var map;
 var marker;
 var watchID = null;
 var x;
 var y;
-			
+
 $(document).on('pageinit', '#page3', function(e, data)
 {    
 	var options = {maximumAge: 3000, timeout: 60000, enableHighAccuracy: true };
@@ -31,7 +30,7 @@ $(document).on('pageinit', '#page3', function(e, data)
 			
 			x = position.coords.latitude;
         	y =  position.coords.longitude;
-        	console.log('Actualizo!');
+        	//console.log('Actualizo!');
         	
 			var newCenter = new google.maps.LatLng(x, y);
 			
@@ -57,14 +56,17 @@ $(document).on('pageinit', '#page3', function(e, data)
 		}, onError, options);
 		
 		setTimeout(autoUpdate, 10000);
+
 	}
 	
     autoUpdate();
 	
 	// onError Callback receives a PositionError object
 
-	function onError(error) {
-        alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
+	function onError(error)
+	{
+		//$.mobile.changePage("dialog-boxes/error/error-gps.html", {role:"dialog"}); //<-- cargar con ajax
+        console.log('Código Error: '    + error.code    + '\n' + 'Mensaje: ' + error.message);
 	}
 });
   		 		
@@ -73,5 +75,6 @@ $('#page3').on('pageshow',function(event)
 {
 	google.maps.event.trigger(map, 'resize');
     map.setOptions(mapOptions); 
+
 });
 
