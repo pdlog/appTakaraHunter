@@ -174,9 +174,19 @@
 						<input id='tesorox_busqueda_realizando' type='text' readonly>
 						<input id='tesoroy_busqueda_realizando' type='text' readonly>
 					</div>
+					<div>
+						<input id='distancia_busqueda' type='text' readonly>
+					</div>
+				</div>
+				<div id='content-map-tesoro' data-role='content'>
+					<div id="mapatesoro" style="height:200px; width:100%;"><center>Cargando mapa...</center></div>
 				</div>
 				<br>
-				<a id='boton-atrapar-tesoro' href='' data-role='button' data-icon='search' data-theme='a'>Buscar tesoro</a>
+				<div id='content-boton-tesoro'>
+					<p id='aviso-tesoro'></p>
+					<a id='boton-atrapar-tesoro' href='' data-role='button' data-icon='search' data-theme='a'>Buscar tesoro</a>
+				</div>
+				
 			</div>
 			<div id='footer5' data-role='footer' data-position='fixed'>
 				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
@@ -250,7 +260,8 @@
 		<script type='text/javascript' src='js/perfil.js'></script>
 		<script type='text/javascript' src='js/busquedas.js'></script>
 		<script type='text/javascript' src='js/funciones_busquedas.js'></script>
-		<script type='text/javascript' src='js/mapas.js'></script>
+		<script type='text/javascript' src='js/mapa-perfil.js'></script>
+		<script type='text/javascript' src='js/mapa-tesoro.js'></script>
 		<script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOK5exbY-SG6W6cr-EoH2jv9llU2uOFyA&sensor=true"></script>
 		<script type='text/javascript'>

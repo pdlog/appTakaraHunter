@@ -2,6 +2,7 @@ var mapOptions;
 var map;
 var marker;
 var watchID = null;
+var newCenter;
 var x;
 var y;
 
@@ -32,7 +33,7 @@ $(document).on('pageinit', '#page3', function(e, data)
         	y =  position.coords.longitude;
         	//console.log('Actualizo!');
         	
-			var newCenter = new google.maps.LatLng(x, y);
+			newCenter = new google.maps.LatLng(x, y);
 			
 			if(marker) // El marcador ya existe.
 			{
@@ -74,7 +75,7 @@ $(document).on('pageinit', '#page3', function(e, data)
 $('#page3').on('pageshow',function(event)
 {
 	google.maps.event.trigger(map, 'resize');
-    map.setOptions(mapOptions); 
-
+    map.setOptions(mapOptions);
+    map.setCenter(newCenter); 
 });
 
