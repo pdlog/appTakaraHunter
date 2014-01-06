@@ -83,7 +83,7 @@
 				<ul id='datos_personales_usuario' data-role="listview"></ul>
 			</div>
 			<div id='content-map' data-role='content'>
-				<div id="mapaperfil" style="height:200px; width:100%;"></div>
+				<div id="mapaperfil" style="height:200px; width:100%;"><center>Cargando mapa...</center></div>
 			</div>
 			<div id='footer3' data-role='footer' data-position='fixed'>
 				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
@@ -191,6 +191,8 @@
 		<!-------------------------------------------------------- VARIABLE GLOBALES QUE WARRO ------------------------------------------->
 		<input id='username-global' type='hidden'>
 		<input id='id-user-global' type='hidden'>
+		<input id='x-global' type='hidden'>
+		<input id='y-global' type='hidden'>
 		<!---------------------------------------------------------------------- SCRIPTS ------------------------------------------------->
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/jquery_mobile.js'></script>
@@ -208,7 +210,6 @@
 		<script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOK5exbY-SG6W6cr-EoH2jv9llU2uOFyA&sensor=true"></script>
 		<script type='text/javascript'>
-			document.addEventListener("deviceready", onDeviceReady, false);
 			//$.mobile.ajaxEnabled = false; // <-- THIS IS PRO CODE (RESUELVE EL CORTE DE LOS MAPAS)
 			//app.initialize();
 			/*$(document).on('pageinit', '#page3',function(e,data){    

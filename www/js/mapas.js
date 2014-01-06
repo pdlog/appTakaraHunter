@@ -9,41 +9,58 @@ var y;
 $(document).on('pageinit', '#page3', function(e, data)
 {    
 	var options = {maximumAge: 3000, timeout: 60000, enableHighAccuracy: true };
-    watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
+	mapOptions =
+	{
+		zoom:15,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		draggable:true,
+		panControl:false,
+		zoomControl:true,
+		mapTypeControl:false,
+		scaleControl:false,
+		streetViewControl:false,
+		overviewMapControl:false,
+	};
 	
-	function onSuccess(position) {
-        
-        x = position.coords.latitude;
-        y =  position.coords.longitude;
-        
-        var center = new google.maps.LatLng(x, y);
-		mapOptions =
-		{
-			center:center,
-			zoom:12,
-			mapTypeId:google.maps.MapTypeId.ROADMAP,
-			draggable:true,
-			panControl:false,
-			zoomControl:true,
-			mapTypeControl:false,
-			scaleControl:false,
-			streetViewControl:false,
-			overviewMapControl:false,
-		};
+	map = new google.maps.Map(document.getElementById('mapaperfil'), mapOptions);
+	marker = null;
 		
-		map = new google.maps.Map(document.getElementById('mapaperfil'), mapOptions);
-	
-		marker = new google.maps.Marker(
-		{
-			map:map,
-			draggable:false,
-			animation: google.maps.Animation.DROP,
-			position: center,
-			icon: 'img/moneda_takara.png'
-		});
-                           
+	function autoUpdate() // Autoactualización del Mapa
+	{
+		watchID = navigator.geolocation.watchPosition(function(position){
+			
+			x = position.coords.latitude;
+        	y =  position.coords.longitude;
+        	console.log('Actualizo!');
+        	
+			var newCenter = new google.maps.LatLng(x, y);
+			
+			if(marker) // El marcador ya existe.
+			{
+				marker.setPosition(newCenter); // Actualizamos la posición.
+			}
+			else // El marcador no existe.
+			{
+				marker = new google.maps.Marker(
+				{
+					map:map,
+					draggable:false,
+					//animation: google.maps.Animation.DROP,
+					position: newCenter,
+					icon: 'img/moneda_takara.png'
+				});
+			}
+			
+			map.setCenter(newCenter);
+			
+			
+		}, onError, options);
+		
+		setTimeout(autoUpdate, 10000);
 	}
-
+	
+    autoUpdate();
+	
 	// onError Callback receives a PositionError object
 
 	function onError(error) {
@@ -56,9 +73,5 @@ $('#page3').on('pageshow',function(event)
 {
 	google.maps.event.trigger(map, 'resize');
     map.setOptions(mapOptions); 
-    map.setMarker(marker);
 });
-
-
-
 
