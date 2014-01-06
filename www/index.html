@@ -59,7 +59,7 @@
 			<div id='content2' data-role='content'>
 				<form id='form-login' action=''>
 					<div data-role='fieldcontain'>
-						<label for='username-login'>Nombre de usuario:</label><input type='text' name='username-login' id='username-login' placeholder='Pepito'>       
+						<label for='username-login'>Nombre de usuario:</label><input type='text' name='username-login' id='username-login' placeholder='Usuario'>       
 						<label for='password-login'>Contraseña:</label><input type='password' name='password-login' id='password-login' placeholder='Contraseña'>
 					</div>
 					<input type='submit' id='boton-login' value='Iniciar sesión'>
@@ -91,14 +91,18 @@
 				<h1>Mi perfil</h1>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
+			
+			
 			<div id='content3' data-role='content'>
 				<p id='foto_perfil'></p>
 				<br>
 				<ul id='datos_personales_usuario' data-role="listview"></ul>
 			</div>
 			<div id='content-map' data-role='content'>
-				<div id="mapaperfil" style="height:200px; width:100%;"><center>Cargando mapa...</center></div>
+				<div id="mapaperfil" style="height:200px; width:20%;"><center>Cargando mapa...</center></div>
 			</div>
+			
+			
 			<div id='footer3' data-role='footer' data-position='fixed'>
 				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
 				<div data-role="navbar">
@@ -217,7 +221,7 @@
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
 			<div id='content6' data-role='content'>
-				<!--<audio id='audio' src='sounds/shop.mp3'></audio> no logro que funcione el sound-->
+				
 				<center><img src='img/takara_wallpaper.png' height='150' weight='150'></center>
 			</div>
 			<div id='footer6' data-role='footer' data-position='fixed'>
@@ -278,5 +282,6 @@
       			mapTypeId: google.maps.MapTypeId.ROADMAP
    			});*/
 		</script>
+		<audio id='audio' src='sounds/shop.mp3' preload="auto"></audio>
 	</body>
 </html>
