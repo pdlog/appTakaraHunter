@@ -51,7 +51,4 @@
     <access origin="*.google.com" /> 
     <access origin="*.googleapis.com" /> 
     <access origin="*.gstatic.com" />
-    <feature name="Media">
-    	<param name="android-package" value="org.apache.cordova.AudioHandler" />
-	</feature>
 </widget>

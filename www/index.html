@@ -34,7 +34,7 @@
 				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
 				<div data-role="navbar">
 					<ul>
-						<li><a href='login.html' data-icon='lock'>Iniciar sesión</a></li>
+						<li><a href='#page2' data-icon='lock'>Iniciar sesión</a></li>
 						<li><a class='botonconfig' href='' data-icon='gear'>Configuración</a></li>
 						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
 					</ul>
@@ -51,8 +51,8 @@
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
 			</div>-->
-			<!--<div id='header2' data-role='header' data-position='fixed'>
-				<a href='#panel2' data-role='button' data-icon='home'>Menú</a>
+			<div id='header2' data-role='header' data-position='fixed'>
+				<!--<a href='#panel2' data-role='button' data-icon='home'>Menú</a>-->
 				<h1>Iniciar sesión</h1>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
@@ -66,7 +66,7 @@
 				</form>
 			</div>
 			<div id='footer2' data-role='footer' data-position='fixed'>
-				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
 				<div data-role="navbar">
 					<ul>
 						<li><a href='#page1' data-icon='home'>Página de inicio</a></li>
@@ -75,9 +75,9 @@
 					</ul>
 			    </div>
 			</div>
-		</div>-->
+		</div>
 		<!------------------------------------------------------------ MI PERFIL ------------------------------------------------------>
-		<!--<div id='page3' data-role='page' data-theme='a'>
+		<div id='page3' data-role='page' data-theme='a'>
 			<!--<div id='panel3' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
 				<div class='panel-content'>
 					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
@@ -85,9 +85,9 @@
 					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
 					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
 				</div>
-			</div>
+			</div>-->
 			<div id='header3' data-role='header' data-position='fixed'>
-				<!--<a href='#panel3' data-role='button' data-icon='home'>Menú</a>
+				<!--<a href='#panel3' data-role='button' data-icon='home'>Menú</a>-->
 				<h1>Mi perfil</h1>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
@@ -104,7 +104,7 @@
 			
 			
 			<div id='footer3' data-role='footer' data-position='fixed'>
-				<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>
+				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
 				<div data-role="navbar">
 					<ul>
 						<li><a class='boton-busquedas' href='#page4' data-icon='location'>Búsquedas</a></li>
@@ -113,7 +113,7 @@
 					</ul>
 			    </div>
 			</div>
-		</div>-->
+		</div>
 		<!------------------------------------------------------------ MIS BUSQUEDAS ------------------------------------------------------>
 		<div id='page4' data-role='page' data-theme='a'>
 			<!--<div id='panel4' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
@@ -259,7 +259,7 @@
 		<script type='text/javascript' src='js/sobre.js'></script>
 		<script type='text/javascript' src='js/config.js'></script>
 		<script type='text/javascript' src='js/help.js'></script>
-		<!--<script type='text/javascript' src='js/login.js'></script>-->
+		<script type='text/javascript' src='js/login.js'></script>
 		<script type='text/javascript' src='js/logout.js'></script>
 		<script type='text/javascript' src='js/perfil.js'></script>
 		<script type='text/javascript' src='js/busquedas.js'></script>
@@ -269,8 +269,7 @@
 		<script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOK5exbY-SG6W6cr-EoH2jv9llU2uOFyA&sensor=true"></script>
 		<script type='text/javascript'>
-			
-			document.addEventListener("deviceready", onDeviceReady, false);
+			//document.addEventListener("deviceready", onDeviceReady, false);
 			//$.mobile.ajaxEnabled = false; // <-- THIS IS PRO CODE (RESUELVE EL CORTE DE LOS MAPAS)
 			//app.initialize();
 			/*$(document).on('pageinit', '#page3',function(e,data){    
@@ -283,6 +282,6 @@
       			mapTypeId: google.maps.MapTypeId.ROADMAP
    			});*/
 		</script>
-		
+		<audio id='audio' src='sounds/shop.mp3' preload="auto"></audio>
 	</body>
 </html>

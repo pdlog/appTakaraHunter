@@ -86,28 +86,16 @@ function cargarBusquedas()
 
 // Reproduccir y parar el audio de atrapar tesoro.
 
-var myMedia = null;
-
 $('#page6').on('pageshow', function(e)
 {
-	myMedia = new Media("sounds/shop.mp3", 
-        function(){
-            if (myMedia) {
-                myMedia.stop();
-                myMedia.release();
-            }
-        }, 
-        function(error){
-            console.log(error.message);
-        });
+	$('#audio').get(0).play();
 
-	myMedia.play();
 });
 
-/*$('#page6').on('pagehide', function(e)
+$('#page6').on('pagehide', function(e)
 {
 	$('#audio').each(function(){
     	this.pause(); // Stop playing
     	this.currentTime = 0; // Reset time
 	}); 
-});*/
+});
