@@ -13,46 +13,13 @@
 	</head>
 	<body>
 		<!------------------------------------------------------------ PÁGINA BIENVENIDA -------------------------------------------------->
-		<div id='page1' data-role='page' data-theme='a'>
-			<!--<div id='panel1' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
-				<div class='panel-content'>
-					<a href='#page2' data-role='button' data-icon='lock' data-theme='a'>Iniciar sesión</a>
-					<a class='botonconfig' href='' data-role='button' data-icon='gear' data-theme='a'>Configuración</a>
-					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
-					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
-				</div>
-			</div>-->
-			<div id='header1' data-role='header' data-position='fixed'>
-				<!--<a href='#panel1' data-role='button' data-icon='home'>Menú</a>-->
-				<h1>Bienvenido</h1>
-				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
-			</div>
-			<div id='content1' data-role='content'>
-				
-			</div>
-			<div id='footer1' data-role='footer' data-position='fixed'>
-				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
-				<div data-role="navbar">
-					<ul>
-						<li><a href='#page2' data-icon='lock'>Iniciar sesión</a></li>
-						<li><a class='botonconfig' href='' data-icon='gear'>Configuración</a></li>
-						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
-					</ul>
-			    </div>
-			</div>
+		<div id='page1' data-role="page" data-theme='a' style="background: transparent url('img/papel.jpg') repeat;">
+			<a href="#page2"><img src="img/welcome.png" style="max-width: 100%; max-height: 100%; display: block; margin: auto; position:relative;"></a>
+			<label id="tag-welcome" style=" position: absolute; bottom: 8%; text-align: center; width: 100%; background-color: rgba(255,206,57,0.5);">¡Toca la pantalla!</label>
 		</div>
 		<!------------------------------------------------------------ INICIO SESIÓN ------------------------------------------------------>
 		<div id='page2' data-role='page' data-theme='a'>
-			<!--<div id='panel2' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
-				<div class='panel-content'>
-					<a href='#page1' data-role='button' data-icon='home' data-theme='a'>Página de inicio</a>
-					<a class='botonconfig' href='' data-role='button' data-icon='gear' data-theme='a'>Configuración</a>
-					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
-					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
-				</div>
-			</div>-->
 			<div id='header2' data-role='header' data-position='fixed'>
-				<!--<a href='#panel2' data-role='button' data-icon='home'>Menú</a>-->
 				<h1>Iniciar sesión</h1>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
@@ -66,26 +33,16 @@
 				</form>
 			</div>
 			<div id='footer2' data-role='footer' data-position='fixed'>
-				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
 				<div data-role="navbar">
 					<ul>
-						<li><a href='#page1' data-icon='home'>Página de inicio</a></li>
-						<li><a class='botonconfig' href='' data-icon='gear'>Configuración</a></li>
-						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
+						<li><a class='botonconfig' href='' data-icon='gear'>Ajustes</a></li>
+						<li><a class='botonsobre' href='' data-icon='bars'>Acerca de...</a></li>
 					</ul>
 			    </div>
 			</div>
 		</div>
 		<!------------------------------------------------------------ MI PERFIL ------------------------------------------------------>
 		<div id='page3' data-role='page' data-theme='a'>
-			<!--<div id='panel3' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
-				<div class='panel-content'>
-					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
-					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
-					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
-					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
-				</div>
-			</div>-->
 			<div id='header3' data-role='header' data-position='fixed'>
 				<!--<a href='#panel3' data-role='button' data-icon='home'>Menú</a>-->
 				<h1>Mi perfil</h1>
@@ -116,17 +73,10 @@
 		</div>
 		<!------------------------------------------------------------ MIS BUSQUEDAS ------------------------------------------------------>
 		<div id='page4' data-role='page' data-theme='a'>
-			<!--<div id='panel4' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
-				<div class='panel-content'>
-					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
-					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
-					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
-					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
-				</div>
-			</div>-->
 			<div id='header4' data-role='header' data-position='fixed'>
 				<!--<a href='#panel4' data-role='button' data-icon='home'>Menú</a>-->
 				<h1>Búsquedas</h1>
+				<button href="" class="ui-btn ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-btn-left ui-btn ui-corner-all">Atrás</a>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
 			<div id='content4' data-role='content'>
@@ -264,6 +214,7 @@
 		<script type='text/javascript' src='js/perfil.js'></script>
 		<script type='text/javascript' src='js/busquedas.js'></script>
 		<script type='text/javascript' src='js/funciones_busquedas.js'></script>
+		<script type='text/javascript' src='js/funciones.js'></script>
 		<script type='text/javascript' src='js/mapa-perfil.js'></script>
 		<script type='text/javascript' src='js/mapa-tesoro.js'></script>
 		<script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
