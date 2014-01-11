@@ -78,9 +78,6 @@ $('#page3').on('pageshow',function(event)
 
 });*/
 
-
-$('#page5').on('pageshow', function(e, data)
-{
 	var mapOptionsT = null;
 	var mapT = null;
 	var markerT = null;
@@ -88,22 +85,38 @@ $('#page5').on('pageshow', function(e, data)
 	var tesoroPos = null;
 	var userPos = null;
 	var watchIDT = null;
-	var tesoroX = null;
-	var tesoroY = null;
 	var lineSymbol = null;
 	var lineCoordinates = null;
 	var line = null;
 	var distancia = 0;
 	var count = 0;
-	
-	tesoroX = $('#tesorox_busqueda_realizando').val();
-	tesoroY = $('#tesoroy_busqueda_realizando').val();
 
-	var tesoroPos = new google.maps.LatLng(tesoroX, tesoroY);
+
+function cargarMapaAtraparTesoro()
+{
+	/*alert("entro");
+	mapOptionsT = null;
+	mapT = null;
+	markerT = null;
+	markerU = null;
+	tesoroPos = null;
+	userPos = null;
+	watchIDT = null;
+	lineSymbol = null;
+	lineCoordinates = null;
+	line = null;
+	distancia = 0;
+	count = 0;*/
+	
+	
+	var tesoroPos = new google.maps.LatLng(tesoro_x, tesoro_y);
 	var options = {maximumAge: 3000, timeout: 60000, enableHighAccuracy: true };
+	
+	$('#mensaje-atrapar').text("Calculando distancia restante...");
 	
 	mapOptionsT =
 	{
+		center: tesoroPos,
 		zoom:10,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 		draggable:true,
@@ -114,15 +127,13 @@ $('#page5').on('pageshow', function(e, data)
 		streetViewControl:false,
 		overviewMapControl:false,
     };
-	
-	
-	mapT = new google.maps.Map(document.getElementById('mapatesoro'), mapOptionsT);
-	
+
+	mapT = new google.maps.Map(document.getElementById('mapaatrapar'), mapOptionsT);
+
 	markerT = new google.maps.Marker(
 	{
 		map:mapT,
 		draggable:false,
-		//animation: google.maps.Animation.DROP,
 		position: tesoroPos,
 		icon: 'img/moneda_takara.png'
 	});
@@ -131,18 +142,14 @@ $('#page5').on('pageshow', function(e, data)
 	line = null;
 	count = 0;
 	
-		
+	
 	function autoUpdate() // Autoactualización del Mapa
 	{
 		watchIDT = navigator.geolocation.watchPosition(function(position){
 			
-     		$('#mix_busqueda_realizando').val(position.coords.latitude);
-     		$('#miy_busqueda_realizando').val(position.coords.longitude);
-        	//console.log('Actualizo!');
+        	console.log('Actualizo!');
         	
         	userPos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-			
-			mapT.setCenter(userPos);
 			
 			if(markerU) // El marcador ya existe.
 			{
@@ -154,7 +161,6 @@ $('#page5').on('pageshow', function(e, data)
 				{
 					map:mapT,
 					draggable:false,
-					//animation: google.maps.Animation.DROP,
 					position: userPos,
 				});
 			}
@@ -185,21 +191,19 @@ $('#page5').on('pageshow', function(e, data)
     				}],
     				map: mapT
  				});
+ 				
   			}
   			
-  			
   			distancia = google.maps.geometry.spherical.computeDistanceBetween(tesoroPos, userPos);
-  			$('#distancia_busqueda').val(distancia + ' metros');
   			
+  			$('#mensaje-atrapar').text("Distancia: " + metrosKilometros(distancia) + " Km aprox.");
   			if(distancia > 20.0) 
-  			{
-  				$('#boton-atrapar-tesoro').css('visibility', 'hidden');
-  				$('#aviso-tesoro').html("La opcion '<b>Atrapar Tesoro'</b> se mostrará cuando tu distancia sea inferior a <b>20 metros</b><br> Tu distancia actual es de <b>" + distancia + " metros</b>"); 
+  			{ 
+  				$('#boton-atrapar').css('visibility', 'hidden');
   			}
   			else
   			{
-  				$('#boton-atrapar-tesoro').css('visibility', 'visible');
-  				$('#aviso-tesoro').val("");
+  				$('#boton-atrapar').css('visibility', 'visible');
   			}
 
 			
@@ -207,7 +211,6 @@ $('#page5').on('pageshow', function(e, data)
 		
 		setTimeout(autoUpdate, 10000);
 		
-
 	}
 	
 	window.setInterval(function() {
@@ -225,7 +228,7 @@ $('#page5').on('pageshow', function(e, data)
 		//$.mobile.changePage("dialog-boxes/error/error-gps.html", {role:"dialog"}); //<-- cargar con ajax
         console.log('Código Error: '    + error.code    + '\n' + 'Mensaje: ' + error.message);
 	}
-});
+}
 /*
 		var map;
 		var distancia;
@@ -337,12 +340,26 @@ $('#page5').on('pageshow', function(e, data)
 
 */
 // CODIGO PRO QUE RESUELVE EL CORTE DE LOS MAPAS (Hora de resolución: 4:41h)
-$('#page5').on('pageshow',function(event)
+$('#page8').on('pageshow',function(event)
 {
 	google.maps.event.trigger(mapT, 'resize');
     mapT.setOptions(mapOptionsT);
-    mapT.setCenter(userPos); 
 });
 
+$('#page8').on('pagehide', function(event)
+{
+	mapOptionsT = null;
+	mapT = null;
+	markerT = null;
+	markerU = null;
+	tesoroPos = null;
+	userPos = null;
+	watchIDT = null;
+	lineSymbol = null;
+	lineCoordinates = null;
+	line = null;
+	distancia = 0;
+	count = 0;
+});
 
 

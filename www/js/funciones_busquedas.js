@@ -1,110 +1,166 @@
 //---------------------------------------------------------------- EMPEZAR_BUSQUEDA ---------------------------------------------------------------*/
+var tesoro_x;
+var tesoro_y;
+
 function empezar_busqueda(opcion)
 {
+	$.mobile.loading( 'show', {
+		text: 'Cargando',
+		textVisible: true,
+		theme: 'a',
+		html: ""
+	});
 	var ip = $("#ip-server").val();
-	
+	var listado = "";	
+	$("#list-participantes").empty();
 	$.ajax({
 		async: true,
-		url: "http://" + ip + ":8000/api/busquedas/" + opcion + "/",
+		url: "http://" + ip + ":8000/api/users/",
 		type: "GET",
 		dataType: 'json',
-		success: function(respuesta)
+		success: function(usuarios)
 		{
-			var titulo = respuesta.titulo;
-			var descripcion = respuesta.descripcion;
-			
 			$.ajax({
 				async: true,
-				url: "http://" + ip + ":8000/api/tesoros/?busqueda=" + opcion,
+				url: "http://" + ip + ":8000/api/busquedas/" + opcion + "/",
 				type: "GET",
 				dataType: 'json',
-				success: function(respuesta)
+				success: function(busqueda)
 				{
-					var tesoro_x = respuesta[0].x;
-					var tesoro_y = respuesta[0].y;
+					var titulo = busqueda.titulo;
+					var descripcion = busqueda.descripcion;
+						
+					for(i=0; i<busqueda.participantes.length; i++)
+					{
+						for(j=0; j<usuarios.length; j++)
+						{
+							
+							if(usuarios[j].id == busqueda.participantes[i])
+							{
+								listado = listado + "<p id='usuario" + usuarios[j].id + "'>@" + usuarios[j].username + "</li><br>";
+							}
+						}	
+					}
+					$("#list-participantes").html(listado);
+						
+					$.ajax({
+						async: true,
+						url: "http://" + ip + ":8000/api/tesoros/?busqueda=" + opcion,
+						type: "GET",
+						dataType: 'json',
+						success: function(respuesta)
+						{
+							tesoro_x = respuesta[0].x;
+							tesoro_y = respuesta[0].y;
+					
+							cargarMapaBusqueda(tesoro_x, tesoro_y);
+							cargarMapaAtraparTesoro();
 		
-					$("#titulo_busqueda_realizando").val(titulo);
-					$("#descripcion_busqueda_realizando").val(descripcion);
+							$("#cab-detalles-busqueda").text(titulo);
+							$("#des-detalles-busqueda").text(descripcion);
+							$("#tesoro_x").text(tesoro_x);
+							$("#tesoro_y").text(tesoro_y);
 					
-					$("#tesorox_busqueda_realizando").val(tesoro_x);
-					$("#tesoroy_busqueda_realizando").val(tesoro_y);
+							$('#boton-atrapar').attr('href',"javascript:buscar_tesoro(" + opcion + ");");
+							
+							$.mobile.changePage("#page5");
 					
-					$('#boton-atrapar-tesoro').attr('href',"javascript:buscar_tesoro(" + opcion + ");");
-					
-					$.mobile.changePage("#page5");
-					
-					//console.log(respuesta);
+						},
+						error: function(respuesta)
+						{
+							$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
+						}
+					});
 				},
 				error: function(respuesta)
 				{
-					$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
+					
 				}
-			});
-			//console.log(respuesta);
+			});	
 		},
 		error: function(respuesta)
 		{
-			$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
+
 		}
 	});
-	
-	//alert("Voy a empezar la búsqueda " + opcion);
+	$.mobile.loading('hide');
 }
+
+$(".boton-participantes").click(function()
+{
+	$.mobile.changePage("#caja-participantes", {role: "dialog"});
+});
+
+
 //---------------------------------------------------------------- ABANDONAR_BUSQUEDA ---------------------------------------------------------------*/
-function dejar_busqueda(opcion)
+function dejar_busqueda(opcion, titulo)
 {
 	var ip = $("#ip-server").val();
 	var id_global = $("#id-user-global").val();
 	
-	$.ajax({
-		async: true,
-		url: "http://" + ip + ":8000/api/busquedas/" + opcion + "/unjoin/",
-		type: "POST",
-		dataType: 'json',
-		data:{'user': id_global},
-		success: function(respuesta)
-		{
-			if (respuesta.status == "unjoined")
+		$.mobile.loading( 'show', {
+			text: 'Abandonando...',
+			textVisible: true,
+			theme: 'a',
+			html: ""
+		});
+		$.ajax({
+			async: true,
+			url: "http://" + ip + ":8000/api/busquedas/" + opcion + "/unjoin/",
+			type: "POST",
+			dataType: 'json',
+			data:{'user': id_global},
+			success: function(respuesta)
 			{
-				cargarBusquedas();
-			}
-			//console.log(respuesta);
-		},
-		error: function(respuesta)
-		{
-			$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
-		}
-	});
-}
-//---------------------------------------------------------------- UNIRME_BUSQUEDA ---------------------------------------------------------------*/
-function unirme_busqueda(opcion)
-{
-	var ip = $("#ip-server").val();
-	var id_global = $("#id-user-global").val();
-	
-	$.ajax({
-		async: true,
-		url: "http://" + ip + ":8000/api/busquedas/" + opcion + "/join/",
-		type: "POST",
-		dataType: 'json',
-		data:{'user': id_global},
-		success: function(respuesta)
-		{
-			//console.log(respuesta);
-			if (respuesta.status == "joined")
-			{
-				cargarBusquedas();
-			}
-			else if (respuesta.status == "busqueda sin tesoros")
+				if (respuesta.status == "unjoined")
+				{
+					cargarMisBusquedas();
+				}
+			},
+			error: function(respuesta)
 			{
 				$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
 			}
-		},
-		error: function(respuesta)
-		{
-			$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
-		}
-	});
+		});
+	
+	$.mobile.loading('hide');
+}
+//---------------------------------------------------------------- UNIRME_BUSQUEDA ---------------------------------------------------------------*/
+function unirme_busqueda(opcion, titulo)
+{
+	var ip = $("#ip-server").val();
+	var id_global = $("#id-user-global").val();
+
+		$.mobile.loading( 'show', {
+			text: 'Uniendose...',
+			textVisible: true,
+			theme: 'a',
+			html: ""
+		});
+		$.ajax({
+			async: true,
+			url: "http://" + ip + ":8000/api/busquedas/" + opcion + "/join/",
+			type: "POST",
+			dataType: 'json',
+			data:{'user': id_global},
+			success: function(respuesta)
+			{
+				//console.log(respuesta);
+				if (respuesta.status == "joined")
+				{
+					cargarBusquedas();
+				}
+				else if (respuesta.status == "busqueda sin tesoros")
+				{
+					$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
+				}
+			},
+			error: function(respuesta)
+			{
+				$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
+			}
+		});
+	$.mobile.loading('hide');
 }
 function buscar_tesoro(opcion)
 {
@@ -140,3 +196,12 @@ function buscar_tesoro(opcion)
 	});
 	//document.getElementById('audio').play(); no logro que funcione
 }
+
+
+
+
+
+
+
+
+

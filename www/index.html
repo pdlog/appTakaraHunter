@@ -8,29 +8,38 @@
 		<link rel='stylesheet' type='text/css' href='css/jquery_mobile.css'/>
 		<link rel='stylesheet' type='text/css' href='css/jquery.mobile.icons.min.css'/>
 		<link rel='stylesheet' type='text/css' href='css/takara_hunter_1.min.css'/>
-		<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
-		<title>TH | Bienvenido</title>
+		<!--<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />-->
+		<title>Takara Hunter</title>
 	</head>
 	<body>
 		<!------------------------------------------------------------ PÁGINA BIENVENIDA -------------------------------------------------->
 		<div id='page1' data-role="page" data-theme='a' style="background: transparent url('img/papel.jpg') repeat;">
-			<a href="#page2"><img src="img/welcome.png" style="max-width: 100%; max-height: 100%; display: block; margin: auto; position:relative;"></a>
+			<a id="w-click" href="" data-transition="pop">
+				<img src="img/welcome.png" style="max-width: 100%; max-height: 100%; display: block; margin: auto; position: relative;">
+			</a>
 			<label id="tag-welcome" style=" position: absolute; bottom: 8%; text-align: center; width: 100%; background-color: rgba(255,206,57,0.5);">¡Toca la pantalla!</label>
 		</div>
 		<!------------------------------------------------------------ INICIO SESIÓN ------------------------------------------------------>
 		<div id='page2' data-role='page' data-theme='a'>
 			<div id='header2' data-role='header' data-position='fixed'>
 				<h1>Iniciar sesión</h1>
-				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
+				<a data-role="button" class="botonhelp ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-info">Ayuda</a>
 			</div>
 			<div id='content2' data-role='content'>
+				<img src="img/takara_candado.png" style="max-width: 35%; max-height: 35%; display: block; margin: auto; position:relative;">
 				<form id='form-login' action=''>
 					<div data-role='fieldcontain'>
-						<label for='username-login'>Nombre de usuario:</label><input type='text' name='username-login' id='username-login' placeholder='Usuario'>       
+						<label for='username-login'>Nombre de usuario:</label><input type='text' name='username-login' id='username-login' placeholder='Usuario'>
+						<br>   
 						<label for='password-login'>Contraseña:</label><input type='password' name='password-login' id='password-login' placeholder='Contraseña'>
+						<br>
+						<label id="msg-error" style="color: red;"></label>
 					</div>
+					<br>
 					<input type='submit' id='boton-login' value='Iniciar sesión'>
 				</form>
+				<br>
+				<center><a id="registro" href="" target="_blank" data-rel="external">Registrarse</a></center>
 			</div>
 			<div id='footer2' data-role='footer' data-position='fixed'>
 				<div data-role="navbar">
@@ -44,19 +53,46 @@
 		<!------------------------------------------------------------ MI PERFIL ------------------------------------------------------>
 		<div id='page3' data-role='page' data-theme='a'>
 			<div id='header3' data-role='header' data-position='fixed'>
-				<!--<a href='#panel3' data-role='button' data-icon='home'>Menú</a>-->
 				<h1>Mi perfil</h1>
-				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
+				<a data-role="button" class="botonhelp ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-info">Ayuda</a>
+				<a data-role="button" class='boton-logout ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-lock'>Salir</a></li>
 			</div>
-			
-			
 			<div id='content3' data-role='content'>
-				<p id='foto_perfil'></p>
+				<div class="ui-corner-all custom-corners">
+  					<div class="ui-bar ui-bar-a">
+    					<h3>Mi cuenta</h3>
+  					</div>
+  					<div class="ui-body ui-body-a">
+  						<div id="micuenta" style="display: block;">
+  							<div style="float: left; display: inline-block;">
+  								<img id='foto_perfil' src="" style="border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; display: inline-block; margin-top: 1%; max-width: 75px; max-height: 75px;">
+  							</div>
+    						<div id="misdatos" style=" float: left; display: inline-block; margin-left: 20px; margin-top: 5px; margin-bottom: auto; position: relative;">
+    							<p id="user-username" style="font-size: 15px; margin-bottom: -12px;"></p>
+    							<p id="user-nombre" style="font-size: 12px; color: grey;"></p>
+    						</div>
+    					</div>
+    					<div style="clear: both;"></div>
+    					<div id='content-map' data-role='content' style="display: block;" >
+ 							<hr style="height: 0.5px; opacity: 0.5; margin-top: -5px;">
+							<div id="mapaperfil" style="float: left; display: inline-block !important; height:125px; width:50%;"><center>Cargando mapa...</center></div>
+							<div style="float: right; display: inline-block">
+    							<p>Ranking</p>
+    						</div>	
+						</div>
+ 					</div>
+				</div>
 				<br>
-				<ul id='datos_personales_usuario' data-role="listview"></ul>
-			</div>
-			<div id='content-map' data-role='content'>
-				<div id="mapaperfil" style="height:200px; width:20%;"><center>Cargando mapa...</center></div>
+				<div class="ui-corner-all custom-corners">
+  					<div class="ui-bar ui-bar-a">
+    					<h3>Mis búsquedas recientes</h3>
+  					</div>
+  					<div class="ui-body ui-body-a">
+  						<ul id="mis-busquedasrec" data-role="listview" data-inset="true">
+						</ul>
+					</div>
+				</div>
+				<br>
 			</div>
 			
 			
@@ -64,9 +100,9 @@
 				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
 				<div data-role="navbar">
 					<ul>
-						<li><a class='boton-busquedas' href='#page4' data-icon='location'>Búsquedas</a></li>
-						<li><a class='boton-logout' href='' data-icon='lock'>Cerrar sesión</a></li>
-						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
+						<li><a class='boton-busquedas' href='#page7' data-icon='location'>Búsquedas</a></li>
+						<li><a class='boton-misbusquedas' href='#page4' data-icon='bars'>Mis búsquedas</a></li>
+						<li><a class='boton-hall' href='' data-icon='bars'>Hall</a></li>
 					</ul>
 			    </div>
 			</div>
@@ -74,114 +110,147 @@
 		<!------------------------------------------------------------ MIS BUSQUEDAS ------------------------------------------------------>
 		<div id='page4' data-role='page' data-theme='a'>
 			<div id='header4' data-role='header' data-position='fixed'>
-				<!--<a href='#panel4' data-role='button' data-icon='home'>Menú</a>-->
-				<h1>Búsquedas</h1>
-				<button href="" class="ui-btn ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-btn-left ui-btn ui-corner-all">Atrás</a>
+				<h1> Mis búsquedas</h1>
+				<a class="botonatras" href="" data-role="button" data-rel="back" data-icon="arrow-l">Atrás</a>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
 			<div id='content4' data-role='content'>
-				<h1>Mis búsquedas</h1>
+				
 				<ul id='mis-busquedas' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-split-icon='delete'></ul>
-				<h1>Búsquedas disponibles</h1>
-				<ul id='busquedas-disponibles' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-icon='check'></ul>
+				
 			</div>
 			<div id='footer4' data-role='footer' data-position='fixed'>
-				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
 				<div data-role="navbar">
 					<ul>
 						<li><a class='boton-perfil' href='#page3' data-icon='user'>Mi perfil</a></li>
-						<li><a class='boton-logout' href='' data-icon='lock'>Cerrar sesión</a></li>
-						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
+						<li><a class='boton-busquedas' href='#page7' data-icon='location'>Búsquedas</a></li>
+						<li><a class='boton-hall' href='' data-icon='bars'>Hall</a></li>
 					</ul>
 			    </div>
 			</div>
 		</div>
-		<!------------------------------------------------------------ REALIZACIÓN BÚSQUEDA ------------------------------------------------------>
+		<!------------------------------------------------------------ BUSQUEDAS ------------------------------------------------------>
+		<div id='page7' data-role='page' data-theme='a'>
+			<div id='header4' data-role='header' data-position='fixed'>
+				<h1>Búsquedas disponibles</h1>
+				<a class="botonatras" href="" data-role="button" data-rel="back" data-icon="arrow-l">Atrás</a>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
+			</div>
+			<div id='content7' data-role='content'>
+				<ul id='busquedas-disponibles' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-icon='check'></ul>
+			</div>
+			<div id='footer7' data-role='footer' data-position='fixed'>
+				<div data-role="navbar">
+					<ul>
+						<li><a class='boton-perfil' href='#page3' data-icon='user'>Mi perfil</a></li>
+						<li><a class='boton-misbusquedas' href='#page4' data-icon='bars'>Mis búsquedas</a></li>
+						<li><a class='boton-hall' href='' data-icon='bars'>Hall</a></li>
+					</ul>
+			    </div>
+			</div>
+		</div>
+		<!------------------------------------------------------------ DETALLES BÚSQUEDA ------------------------------------------------------>
 		<div id='page5' data-role='page' data-theme='a'>
-			<!--<div id='panel5' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
-				<div class='panel-content'>
-					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
-					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
-					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
-					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
-					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
-				</div>
-			</div>-->
 			<div id='header5' data-role='header' data-position='fixed'>
-				<!--<a href='#panel5' data-role='button' data-icon='home'>Menú</a>-->
-				<h1>Buscando tesoro...</h1>
+				<h1>Detalles búsqueda</h1>
+				<a class="botonatras" href="" data-role="button" data-rel="back" data-icon="arrow-l">Atrás</a>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
 			<center><div id="mapa" width="200px" height="200px"></div></center>
 			<div id='content5' data-role='content'>
-				<h1>Búsqueda</h1>
-				<input id='titulo_busqueda_realizando' type='text' readonly>
-				<input id='descripcion_busqueda_realizando' type='text' readonly>
-				<div class="ui-grid-a">
-			    	<div class="ui-block-a">
-			    		<h1>Yo</h1>
-			    		<input id='mix_busqueda_realizando' type='text' readonly>
-						<input id='miy_busqueda_realizando' type='text' readonly>
-			    	</div>
-					<div class="ui-block-b">
-						<h1>Tesoro</h1>
-						<input id='tesorox_busqueda_realizando' type='text' readonly>
-						<input id='tesoroy_busqueda_realizando' type='text' readonly>
-					</div>
-					<div>
-						<input id='distancia_busqueda' type='text' readonly>
-					</div>
-				</div>
-				<div id='content-map-tesoro' data-role='content'>
-					<div id="mapatesoro" style="height:200px; width:100%;"><center>Cargando mapa...</center></div>
-				</div>
-				<br>
-				<div id='content-boton-tesoro'>
-					<p id='aviso-tesoro'></p>
-					<a id='boton-atrapar-tesoro' href='' data-role='button' data-icon='search' data-theme='a'>Buscar tesoro</a>
-				</div>
-				
-			</div>
+				<div class="ui-corner-all custom-corners">
+  					<div class="ui-bar ui-bar-a">
+   						<h3 id="cab-detalles-busqueda"></h3>
+  					</div>
+  				<div class="ui-body ui-body-a">
+    				<p id="des-detalles-busqueda"></p>
+    				<div style="clear: both;"></div>
+    					<div id='map-busqueda' data-role='content' style="display: block;" >
+ 							<hr style="height: 0.5px; opacity: 0.5; margin-top: -5px;">
+							<div id="mapabusqueda" style="float: left; display: inline-block !important; height:125px; width:100%;"><center>Cargando mapa...</center></div>
+							</div>
+						</div>
+  				</div>
+  				<a class="boton-participantes" href="" data-role="button">Ver participantes</a>
+  				<a id="boton-iniciar-busqueda" href="#page8" data-role="button">Iniciar búsqueda</a>
+  			</div>	
 			<div id='footer5' data-role='footer' data-position='fixed'>
-				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
 				<div data-role="navbar">
 					<ul>
 						<li><a class='boton-perfil' href='#page3' data-icon='user'>Mi perfil</a></li>
-						<li><a class='boton-busquedas' href='#page4' data-icon='location'>Búsquedas</a></li>
-						<li><a class='boton-logout' href='' data-icon='lock'>Cerrar sesión</a></li>
-						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
+						<li><a class='boton-misbusquedas' href='#page4' data-icon='bars'>Mis búsquedas</a></li>
+						<li><a class='boton-busquedas' href='#page7' data-icon='location'>Búsquedas</a></li>
 					</ul>
 			    </div>
 			</div>
 		</div>
-		<!------------------------------------------------------------ ATRAPAR TESORO ------------------------------------------------------>
-		<div id='page6' data-role='page' data-theme='a'>
-			<!--<div id='panel6' data-role='panel' data-position='left' data-display='reveal' data-theme='b'>
-				<div class='panel-content'>
-					<a class='boton-perfil' href='#page3' data-role='button' data-icon='user' data-theme='a'>Mi perfil</a>
-					<a class='boton-busquedas' href='#page4' data-role='button' data-icon='location' data-theme='a'>Búsquedas</a>
-					<a class='boton-logout' href='' data-role='button' data-icon='lock' data-theme='a'>Cerrar sesión</a>
-					<a class='botonsobre' href='' data-role='button' data-icon='bars' data-theme='a'>Sobre la aplicación</a>
-					<a href='' data-role='button' data-icon='delete' data-rel='close' data-theme='a'>Cerrar panel</a>
-				</div>
-			</div>-->
-			<div id='header6' data-role='header' data-position='fixed'>
-				<!--<a href='#panel6' data-role='button' data-icon='home'>Menú</a>-->
-				<h1>¡Tesoro atrapado!</h1>
+		<!------------------------------------------------------------ PARTICIPANTES ------------------------------------------------------>
+		<div id='caja-participantes' data-role='page'>
+			<div data-role='header'>
+				<h1>Participantes</h1>
+			</div>
+			<div id="list-participantes" data-role='content'>
+			</div>
+		</div>
+		<!------------------------------------------------------------ INICIAR BUSQUEDA ------------------------------------------------------>
+		<div id='page8' data-role='page'>
+			<div id='header8' data-role='header' data-position='fixed'>
+				<h1>Atrapando...</h1>
+				<a class="botonatras" href="" data-role="button" data-rel="back" data-icon="arrow-l">Atrás</a>
 				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
+			<div id='content8' data-role='content'>
+				<div id="caja-distancia-boton">
+					<center><h3 id="mensaje-atrapar" class="ui-bar ui-bar-a ui-corner-all"> Calculando distancia restante...</h3></center>
+					<a id="boton-atrapar" data-role="button" href="" style="visibility: hidden;">¡Atrápalo!</a>
+				</div>
+				<div id="mapaatrapar" style="height:400px; width:100%;"></div>
+			</div>
+		</div>
+		<!------------------------------------------------------------ ATRAPAR TESORO ------------------------------------------------------>
+		<div id='page6' data-role='page' data-theme='a'>
+			<div id='header6' data-role='header' data-position='fixed'>
+				<h1>¡Tesoro atrapado!</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-left" data-icon="info">Ayuda</a>
+			</div>
 			<div id='content6' data-role='content'>
-				
-				<center><img src='img/takara_wallpaper.png' height='150' weight='150'></center>
+				<center><img src='img/takara_wallpaper.png' style="max-width: 80%; max-height: 80%;"></center>
+				<center><h1>¡Enhorabuena!</h1></center>
+				<center><p>Has completado la búsqueda. El nuevo tesoro será añadido a tu colección.</p></center>
+				<center><b><h1 style="color: green;">+1</h1></b></center>
 			</div>
 			<div id='footer6' data-role='footer' data-position='fixed'>
-				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
 				<div data-role="navbar">
 					<ul>
 						<li><a class='boton-perfil' href='#page3' data-icon='user'>Mi perfil</a></li>
-						<li><a class='boton-busquedas' href='#page4' data-icon='location'>Búsquedas</a></li>
-						<li><a class='boton-logout' href='' data-icon='lock'>Cerrar sesión</a></li>
-						<li><a class='botonsobre' href='' data-icon='bars'>Sobre la aplicación</a></li>
+					</ul>
+			    </div>
+			</div>
+		</div>
+		<!------------------------------------------------------------ HALL ------------------------------------------------------>
+		<div id='page9' data-role='page' data-theme='a'>
+			<div id='header6' data-role='header' data-position='fixed'>
+				<h1>Hall</h1>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-left" data-icon="info">Ayuda</a>
+			</div>
+			<div id='content9' data-role='content'>
+				<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+     				<thead>
+       					<tr>
+         					<th> Rango </th>
+         					<th> Usuario </th>
+         					<th> Tesoros </th>
+         					<th> Medalla </th>
+       					</tr>
+     				</thead>
+     			</table>
+			</div>
+			<div id='footer9' data-role='footer' data-position='fixed'>
+				<div data-role="navbar">
+					<ul>
+						<li><a class='boton-perfil' href='#page3' data-icon='user'>Mi perfil</a></li>
+						<li><a class='boton-misbusquedas' href='#page4' data-icon='bars'>Mis búsquedas</a></li>
+						<li><a class='boton-busquedas' href='#page7' data-icon='location'>Búsquedas</a></li>
 					</ul>
 			    </div>
 			</div>
@@ -194,6 +263,7 @@
 			<div data-role='content'>
 				<h1>IP del servidor</h1>
 				<input id='ip-server' type='text' value='127.0.0.1'>
+				<center><button id="boton-guardar" type="submit">Guardar</button></center>
 			</div>
 		</div>
 		<!-------------------------------------------------------- VARIABLE GLOBALES QUE WARRO ------------------------------------------->
@@ -213,10 +283,13 @@
 		<script type='text/javascript' src='js/logout.js'></script>
 		<script type='text/javascript' src='js/perfil.js'></script>
 		<script type='text/javascript' src='js/busquedas.js'></script>
+		<script type='text/javascript' src='js/participantes.js'></script>
 		<script type='text/javascript' src='js/funciones_busquedas.js'></script>
 		<script type='text/javascript' src='js/funciones.js'></script>
 		<script type='text/javascript' src='js/mapa-perfil.js'></script>
 		<script type='text/javascript' src='js/mapa-tesoro.js'></script>
+		<script type='text/javascript' src='js/mapa-busqueda.js'></script>
+		<script type='text/javascript' src='js/hall.js'></script>
 		<script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOK5exbY-SG6W6cr-EoH2jv9llU2uOFyA&sensor=true"></script>
 		<script type='text/javascript'>
@@ -233,6 +306,5 @@
       			mapTypeId: google.maps.MapTypeId.ROADMAP
    			});*/
 		</script>
-		<audio id='audio' src='sounds/shop.mp3' preload="auto"></audio>
 	</body>
 </html>
