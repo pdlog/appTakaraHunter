@@ -16,7 +16,7 @@ function cargarHall()
 	var listado = "";
 	var j=1;
 	
-	$("#table-column-toggle").html("<thead><tr>th> Rango </th><th> Usuario </th><th> Tesoros </th><th> Medalla </th></tr></thead>");
+	$("#table-column-toggle").html("<thead><tr><th> Rango </th><th> Usuario </th><th> Tesoros </th><th> Medalla </th></tr></thead>");
 	
 	$.ajax({
 		async: true,
@@ -31,7 +31,6 @@ function cargarHall()
 				for(i=0; i<5; i++)
 				{
 					listado = listado + "<tr><th>" + j + "</th><td>" + response[i].username + "</td><td>" + response[i].recogidaPor__count + "</td><td><img src='" + medallas[i] + "' style='width:48px;'></td></tr>";
-					//listado = listado + "<li id='hall" +  + "' ><a href=''><img src='" + medallas[i] + "' class='ui-li-icon ui-corner-none' style='width: 64px;'>" + j + ".- " + response[i].username + "</a></li>";
 					j++;
 				}
 				for(i; i<response.length; i++)
@@ -44,12 +43,12 @@ function cargarHall()
 				for(i=0; i<response.length; i++)
 				{
 					listado = listado + "<tr><th>" + j + "</th><td>" + response[i].username + "</td><td>" + response[i].recogidaPor__count + "</td><td><img src='" + medallas[i] + "' style='width:48px;'></td></tr>";
-					//listado = listado + "<li id='hall" +  + "' ><a href=''><img src='" + medallas[i] + "' class='ui-li-icon ui-corner-none' style='width: 64px;'>" + j + ".- " + response[i].username + "</a></li>";
 					j++;
 				}
 			}
 			listado = listado + "</tbody>";
 			$("#table-column-toggle").html(listado);
+			$(".ui-table-columntoggle-btn").css('visibility', 'hidden');
 		},
 		error: function(respuesta)
 		{

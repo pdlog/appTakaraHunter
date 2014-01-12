@@ -4,8 +4,6 @@ var mapOptions;
 function cargarMapaPerfil(x, y)
 {    
 	var center = new google.maps.LatLng(x, y);
-	console.log(x);
-	console.log(y);
 
 	mapOptions =
 	{
@@ -33,15 +31,9 @@ function cargarMapaPerfil(x, y)
 	});
 }
 
-// CODIGO PRO QUE RESUELVE EL CORTE DE LOS MAPAS (Hora de resolución: 4:41h)
+// Resuelve el corte de los mapas con jquery mobile
 $('#page3').on('pageshow',function(event)
 {
 	google.maps.event.trigger(map, 'resize');
     map.setOptions(mapOptions);
-});
-
-$('#page5').on('pageshow',function(event)
-{
-	google.maps.event.trigger(mapB, 'resize');
-    mapB.setOptions(mapOptionsB);
 });

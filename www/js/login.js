@@ -12,7 +12,6 @@ $(document).ready(function()
 		$("#boton-login").attr("disabled","disabled");
 		
 		var ip = $("#ip-server").val();
-		//console.log("ola1");
 		e.preventDefault();
 
 		var username = $("#username-login").val();
@@ -33,8 +32,6 @@ $(document).ready(function()
 					if (estado == "fail")
 					{
 						$("#msg-error").text("El usuario o la contraseña son incorrectos.");
-						//$.mobile.changePage("dialog-boxes/error/wrong-username-or-password.html", {role:"dialog"}); //<-- cargar con ajax
-						//$.mobile.changePage("#caja-wrong-username-or-password", {role:"dialog"}); //<-- cargar sin ajax
 					}
 					if (estado == "ok")
 					{
@@ -47,45 +44,29 @@ $(document).ready(function()
 					if (estado == "User is not active")
 					{
 						$("#msg-error").text("El usuario no está activo.");
-						//$.mobile.changePage("dialog-boxes/error/user-no-active.html", {role:"dialog"}); //<-- cargar con ajax
-						//$.mobile.changePage("#caja-user-no-active", {role:"dialog"}); //<-- cargar sin ajax
 					}
-					//console.log(respuesta);
-					//console.log("jsonexito");
 				},
 				error: function(respuesta)
 				{
 					$.mobile.loading( "hide");
 					$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
-					//$.mobile.changePage("#caja-ajax-failed", {role:"dialog"}); //<-- cargar sin ajax
-					//console.log(respuesta);
-					//console.log("jsonfail");
 				}
 			});
-			
-			//$("#boton-login").removeAttr("disabled");
-			//$("#registro").css('visibility', 'visible');
 		}
 		else if(username == "" && password == "")
 		{
 			$.mobile.loading( "hide");
 			$("#msg-error").text("No has introducido ni el usuario ni la contraseña.");
-			//$.mobile.changePage("dialog-boxes/error/no-username-no-password.html", {role:"dialog"}); //<-- cargar con ajax
-			//$.mobile.changePage("#caja-no-username-no-password", {role:"dialog"}); //<-- cargar sin ajax
 		}
 		else if(username == "")
 		{
 			$.mobile.loading( "hide");
 			$("#msg-error").text("No has introducido el usuario.");
-			//$.mobile.changePage("dialog-boxes/error/no-username.html", {role:"dialog"}); //<-- cargar con ajax
-			//$.mobile.changePage("#caja-no-username", {role:"dialog"}); //<-- cargar sin ajax
 		}
 		else if(password == "")
 		{
 			$.mobile.loading( "hide");
 			$("#msg-error").text("No has introducido la contraseña.");
-			//$.mobile.changePage("dialog-boxes/error/no-password.html", {role:"dialog"}); //<-- cargar con ajax
-			//$.mobile.changePage("#caja-no-password", {role:"dialog"}); //<-- cargar sin ajax
 		}
 		$("#boton-login").removeAttr("disabled");
 		return false;

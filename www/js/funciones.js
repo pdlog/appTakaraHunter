@@ -49,10 +49,45 @@ function metrosKilometros(valor)
 	return km;
 }
 
-$("#page3").on("pageshow", function()
+function cargarRango(username_global)
 {
-	var audio = new Media('sounds/shop.mp3');
-	audio.play();
-});
-
+	var ip = $("#ip-server").val();
+	var j = 1;
+	var encontrado = false;
+	$.ajax({
+		async: true,
+		url: "http://" + ip + ":8000/api/hall/",
+		type: "GET",
+		dataType: 'json',
+		success: function(response)
+		{
+			console.log(response.length);
+			for(i=0; i<response.length; i++)
+			{
+				if(username_global == response[i].username)
+				{
+					encontrado = true;
+					if(i <= 4)
+					{
+						$("#rango-perfil").html("<center><h3>Rango: " + j + "</h3><img src='"+ medallas[i] +"' style='max-width: 40%;'><p style='font-size: 12px;'>Tesoros: " + response[i].recogidaPor__count + "</p></center>");
+					}
+					else
+					{
+						$("#rango-perfil").html("<center><h3>Rango: " + j + "</h3><img src='"+ medallas[5] +"' style='max-width: 40%;'><p style='font-size: 12px;'>Tesoros: " + response[i].recogidaPor__count + "</p></center>");
+					}
+					break;
+				}
+				j++;
+			}
+			if(encontrado == false)
+			{
+				$("#rango-perfil").html("<center><h3>Rango: - </h3><p style='font-size: 12px;'>Tesoros: 0</p></center>");
+			}
+		},
+		error: function(response)
+		{
+			console.log("error");
+		}
+	});
+}
 

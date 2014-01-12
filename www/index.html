@@ -8,7 +8,7 @@
 		<link rel='stylesheet' type='text/css' href='css/jquery_mobile.css'/>
 		<link rel='stylesheet' type='text/css' href='css/jquery.mobile.icons.min.css'/>
 		<link rel='stylesheet' type='text/css' href='css/takara_hunter_1.min.css'/>
-		<!--<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />-->
+		<link rel='stylesheet' type='text/css' href='css/takara.css'/>
 		<title>Takara Hunter</title>
 	</head>
 	<body>
@@ -39,12 +39,12 @@
 					<input type='submit' id='boton-login' value='Iniciar sesión'>
 				</form>
 				<br>
-				<center><a id="registro" href="" target="_blank" data-rel="external">Registrarse</a></center>
 			</div>
 			<div id='footer2' data-role='footer' data-position='fixed'>
 				<div data-role="navbar">
 					<ul>
 						<li><a class='botonconfig' href='' data-icon='gear'>Ajustes</a></li>
+						<li><a id="registro" href="" target="_blank" data-rel="external" data-icon='edit'>Registro</a></li>
 						<li><a class='botonsobre' href='' data-icon='bars'>Acerca de...</a></li>
 					</ul>
 			    </div>
@@ -55,7 +55,7 @@
 			<div id='header3' data-role='header' data-position='fixed'>
 				<h1>Mi perfil</h1>
 				<a data-role="button" class="botonhelp ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-info">Ayuda</a>
-				<a data-role="button" class='boton-logout ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-lock'>Salir</a></li>
+				<a data-role="button" class='boton-logout ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-lock'>Salir</a>
 			</div>
 			<div id='content3' data-role='content'>
 				<div class="ui-corner-all custom-corners">
@@ -75,9 +75,9 @@
     					<div style="clear: both;"></div>
     					<div id='content-map' data-role='content' style="display: block;" >
  							<hr style="height: 0.5px; opacity: 0.5; margin-top: -5px;">
-							<div id="mapaperfil" style="float: left; display: inline-block !important; height:125px; width:50%;"><center>Cargando mapa...</center></div>
-							<div style="float: right; display: inline-block">
-    							<p>Ranking</p>
+							<div id="mapaperfil" style="float: left; display: inline-block !important; height:100px; width:40%;"><center>Cargando mapa...</center></div>
+							<div id="rango-perfil" style="float: right; display: inline-block; margin-top: -15px; width: 40%">
+
     						</div>	
 						</div>
  					</div>
@@ -94,14 +94,11 @@
 				</div>
 				<br>
 			</div>
-			
-			
 			<div id='footer3' data-role='footer' data-position='fixed'>
-				<!--<h1><img src='img/favicon.png'> 2014 Takara Hunter | Todos los derechos reservados</h1>-->
 				<div data-role="navbar">
 					<ul>
 						<li><a class='boton-busquedas' href='#page7' data-icon='location'>Búsquedas</a></li>
-						<li><a class='boton-misbusquedas' href='#page4' data-icon='bars'>Mis búsquedas</a></li>
+						<li><a class='boton-misbusquedas' href='#page4' data-icon='eye'>Mis búsquedas</a></li>
 						<li><a class='boton-hall' href='' data-icon='bars'>Hall</a></li>
 					</ul>
 			    </div>
@@ -116,7 +113,7 @@
 			</div>
 			<div id='content4' data-role='content'>
 				
-				<ul id='mis-busquedas' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar búsquedas' data-split-icon='delete'></ul>
+				<ul id='mis-busquedas' data-role='listview' data-inset='true' data-filter='true' data-filter-placeholder='Filtrar mis búsquedas' data-split-icon='delete'></ul>
 				
 			</div>
 			<div id='footer4' data-role='footer' data-position='fixed'>
@@ -124,7 +121,6 @@
 					<ul>
 						<li><a class='boton-perfil' href='#page3' data-icon='user'>Mi perfil</a></li>
 						<li><a class='boton-busquedas' href='#page7' data-icon='location'>Búsquedas</a></li>
-						<li><a class='boton-hall' href='' data-icon='bars'>Hall</a></li>
 					</ul>
 			    </div>
 			</div>
@@ -143,8 +139,7 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a class='boton-perfil' href='#page3' data-icon='user'>Mi perfil</a></li>
-						<li><a class='boton-misbusquedas' href='#page4' data-icon='bars'>Mis búsquedas</a></li>
-						<li><a class='boton-hall' href='' data-icon='bars'>Hall</a></li>
+						<li><a class='boton-misbusquedas' href='#page4' data-icon='eye'>Mis búsquedas</a></li>
 					</ul>
 			    </div>
 			</div>
@@ -167,18 +162,18 @@
     				<div style="clear: both;"></div>
     					<div id='map-busqueda' data-role='content' style="display: block;" >
  							<hr style="height: 0.5px; opacity: 0.5; margin-top: -5px;">
-							<div id="mapabusqueda" style="float: left; display: inline-block !important; height:125px; width:100%;"><center>Cargando mapa...</center></div>
+							<div id="mapabusqueda" style="float: left; display: inline-block !important; height:125px; width:85%;"><center>Cargando mapa...</center></div>
 							</div>
 						</div>
   				</div>
-  				<a class="boton-participantes" href="" data-role="button">Ver participantes</a>
-  				<a id="boton-iniciar-busqueda" href="#page8" data-role="button">Iniciar búsqueda</a>
+  				<a class="boton-participantes ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-left" href="" data-role="button">Ver participantes</a>
+  				<a id="boton-iniciar-busqueda" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-left" href="" data-role="button">Iniciar búsqueda</a>
   			</div>	
 			<div id='footer5' data-role='footer' data-position='fixed'>
 				<div data-role="navbar">
 					<ul>
 						<li><a class='boton-perfil' href='#page3' data-icon='user'>Mi perfil</a></li>
-						<li><a class='boton-misbusquedas' href='#page4' data-icon='bars'>Mis búsquedas</a></li>
+						<li><a class='boton-misbusquedas' href='#page4' data-icon='eye'>Mis búsquedas</a></li>
 						<li><a class='boton-busquedas' href='#page7' data-icon='location'>Búsquedas</a></li>
 					</ul>
 			    </div>
@@ -204,7 +199,7 @@
 					<center><h3 id="mensaje-atrapar" class="ui-bar ui-bar-a ui-corner-all"> Calculando distancia restante...</h3></center>
 					<a id="boton-atrapar" data-role="button" href="" style="visibility: hidden;">¡Atrápalo!</a>
 				</div>
-				<div id="mapaatrapar" style="height:400px; width:100%;"></div>
+				<div id="mapaatrapar" style="height:400px; width:90%;"></div>
 			</div>
 		</div>
 		<!------------------------------------------------------------ ATRAPAR TESORO ------------------------------------------------------>
@@ -231,7 +226,8 @@
 		<div id='page9' data-role='page' data-theme='a'>
 			<div id='header6' data-role='header' data-position='fixed'>
 				<h1>Hall</h1>
-				<a class='botonhelp' href="" data-role="button" class="ui-btn-left" data-icon="info">Ayuda</a>
+				<a class="botonatras" href="" data-role="button" data-rel="back" data-icon="arrow-l">Atrás</a>
+				<a class='botonhelp' href="" data-role="button" class="ui-btn-right" data-icon="info">Ayuda</a>
 			</div>
 			<div id='content9' data-role='content'>
 				<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
@@ -249,7 +245,7 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a class='boton-perfil' href='#page3' data-icon='user'>Mi perfil</a></li>
-						<li><a class='boton-misbusquedas' href='#page4' data-icon='bars'>Mis búsquedas</a></li>
+						<li><a class='boton-misbusquedas' href='#page4' data-icon='eye'>Mis búsquedas</a></li>
 						<li><a class='boton-busquedas' href='#page7' data-icon='location'>Búsquedas</a></li>
 					</ul>
 			    </div>
@@ -263,7 +259,7 @@
 			<div data-role='content'>
 				<h1>IP del servidor</h1>
 				<input id='ip-server' type='text' value='127.0.0.1'>
-				<center><button id="boton-guardar" type="submit">Guardar</button></center>
+				<center><button id="boton-guardar" type="submit" class="ui-btn ui-shadow ui-corner-all ui-icon-edit ui-btn-icon-left">Guardar</button></center>
 			</div>
 		</div>
 		<!-------------------------------------------------------- VARIABLE GLOBALES QUE WARRO ------------------------------------------->
@@ -274,7 +270,7 @@
 		<!---------------------------------------------------------------------- SCRIPTS ------------------------------------------------->
 		<script type='text/javascript' src='js/jquery.js'></script>
 		<script type='text/javascript' src='js/jquery_mobile.js'></script>
-		<!--<script type='text/javascript' src='js/fastclick.js'></script>-->
+		<script type='text/javascript' src='js/fastclick.js'></script>
 		<script type='text/javascript' src='js/index.js'></script>
 		<script type='text/javascript' src='js/sobre.js'></script>
 		<script type='text/javascript' src='js/config.js'></script>
@@ -292,19 +288,5 @@
 		<script type='text/javascript' src='js/hall.js'></script>
 		<script type="text/javascript" src="js/jquery.ui.map.full.min.js"></script>
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCOK5exbY-SG6W6cr-EoH2jv9llU2uOFyA&sensor=true"></script>
-		<script type='text/javascript'>
-			//document.addEventListener("deviceready", onDeviceReady, false);
-			//$.mobile.ajaxEnabled = false; // <-- THIS IS PRO CODE (RESUELVE EL CORTE DE LOS MAPAS)
-			//app.initialize();
-			/*$(document).on('pageinit', '#page3',function(e,data){    
-   				// This is the minimum zoom level that we'll allow
-   				var minZoomLevel = 12;
-
-   				var map = new google.maps.Map(document.getElementById('map-canvas'), {
-      			zoom: minZoomLevel,
-      			center: new google.maps.LatLng(38.50, -90.50),
-      			mapTypeId: google.maps.MapTypeId.ROADMAP
-   			});*/
-		</script>
 	</body>
 </html>

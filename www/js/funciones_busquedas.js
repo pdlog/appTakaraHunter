@@ -54,7 +54,6 @@ function empezar_busqueda(opcion)
 							tesoro_y = respuesta[0].y;
 					
 							cargarMapaBusqueda(tesoro_x, tesoro_y);
-							cargarMapaAtraparTesoro();
 		
 							$("#cab-detalles-busqueda").text(titulo);
 							$("#des-detalles-busqueda").text(descripcion);
@@ -90,6 +89,20 @@ $(".boton-participantes").click(function()
 {
 	$.mobile.changePage("#caja-participantes", {role: "dialog"});
 });
+
+$("#boton-iniciar-busqueda").click(function()
+	{
+		$.mobile.loading( 'show', {
+			text: 'Cargando',
+			textVisible: true,
+			theme: 'a',
+			html: ""
+		});
+		cargarMapaAtraparTesoro();
+		$.mobile.loading('hide');
+		$.mobile.changePage('#page8');
+});
+
 
 
 //---------------------------------------------------------------- ABANDONAR_BUSQUEDA ---------------------------------------------------------------*/
@@ -145,7 +158,6 @@ function unirme_busqueda(opcion, titulo)
 			data:{'user': id_global},
 			success: function(respuesta)
 			{
-				//console.log(respuesta);
 				if (respuesta.status == "joined")
 				{
 					cargarBusquedas();
@@ -194,7 +206,6 @@ function buscar_tesoro(opcion)
 			$.mobile.changePage("dialog-boxes/error/ajax-failed.html", {role:"dialog"}); //<-- cargar con ajax
 		}
 	});
-	//document.getElementById('audio').play(); no logro que funcione
 }
 
 

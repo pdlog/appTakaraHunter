@@ -4,7 +4,6 @@ $(document).ready(function()
 	$(".botonconfig").click(function(e)
 	{
 		$.mobile.changePage("#caja-config", {role:"dialog"}); //<-- cargar con ajax
-		//$.mobile.changePage("#caja-config", {role:"dialog"}); //<-- cargar sin ajax
 	});
 	
 	$("#boton-guardar").on('click', function()

@@ -1,11 +1,6 @@
 //---------------------------------------------------------------- BUSQUEDAS ---------------------------------------------------------------*/
 $(document).ready(function()
-{
-	/*$(document).on("pageinit", "#page4", function()
-	{
-		//cargarPerfil();
-	});*/
-	
+{	
 	$(".boton-misbusquedas").click(function()
 	{
 		$.mobile.loading( 'show', {
@@ -112,19 +107,3 @@ function cargarBusquedas()
 		
 	
 }
-
-// Reproduccir y parar el audio de atrapar tesoro.
-
-/*$('#page6').on('pageshow', function(e)
-{
-	$('#audio').get(0).play();
-
-});
-
-$('#page6').on('pagehide', function(e)
-{
-	$('#audio').each(function(){
-    	this.pause(); // Stop playing
-    	this.currentTime = 0; // Reset time
-	}); 
-});*/
