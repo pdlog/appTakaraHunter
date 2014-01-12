@@ -31,6 +31,13 @@ function cargarMapaBusqueda(x, y)
 	});
 }
 
+$('#page5').on('pageshow',function(event)
+{
+	google.maps.event.trigger(mapB, 'resize');
+    mapB.setOptions(mapOptionsB);
+});
+
+
 
 
 
